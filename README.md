@@ -69,6 +69,7 @@ Ohana-House/
 - [Architecture](docs/architecture/Architecture.md)
 - [Topologie réseau](docs/architecture/Topologie-Reseau.md)
 - [Inventaire](docs/architecture/Inventaire.md)
+- [Administrer l'infrastructure avec Vision](docs/procedures/configuration/Administrer-Ohana-avec-Vision.md)
 - [Guide de reconstruction](Guide-de-Reconstruction.md)
 - [Chemin critique de reconstruction](Chemin-Critique-de-Reconstruction.md)
 - [Validation finale](Validation-Finale.md)

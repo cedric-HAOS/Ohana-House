@@ -1,3 +1,10 @@
+## [Unreleased]
+
+### Ajout
+
+- Procédure d'administration graphique de la cartographie, des services et des
+  liaisons Ohana-House depuis Ohana-Vision.
+
 ## [1.0.0-Naruto]
 
 ### Ajout
