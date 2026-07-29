@@ -50,7 +50,7 @@ Créer l'arborescence suivante :
 
 ```text
 /etc/dnsmasq.d/
-├── 00-ohanna.conf
+├── 00-ohana.conf
 ├── 10-infrastructure.conf
 ├── 20-serveurs.conf
 ├── 30-infrastructure-reseau.conf
@@ -67,14 +67,14 @@ Créer l'arborescence suivante :
 Créer :
 
 ```bash
-sudo nano /etc/dnsmasq.d/00-ohanna.conf
+sudo nano /etc/dnsmasq.d/00-ohana.conf
 ```
 
 Y copier :
 
 ```ini
 #################################################
-# Ohanna-House
+# Ohana-House
 # Configuration principale DHCP
 #################################################
 
@@ -106,9 +106,9 @@ dhcp-option=option:ntp-server,192.168.1.10
 # Domaine local
 #################################################
 
-domain=ohanna.lan
+domain=ohana.lan
 
-local=/ohanna.lan/
+local=/ohana.lan/
 
 expand-hosts
 ```
@@ -125,11 +125,10 @@ Créer :
 sudo nano /etc/dnsmasq.d/10-infrastructure.conf
 ```
 
-Exemple :
-
-```ini
-dhcp-host=AA:BB:CC:DD:EE:01,192.168.1.10,infra-01
-```
+INFRA-01 n'est pas déclaré dans ce fichier : son adresse
+`192.168.1.10/24` est configurée statiquement dans NetworkManager afin que le
+serveur DHCP ne dépende pas de lui-même. Ce fichier est réservé aux futurs
+équipements d'infrastructure utilisant une réservation.
 
 ---
 
@@ -223,7 +222,7 @@ Créer le fichier :
 Contenu proposé :
 
 ```text
-00-ohanna.conf
+00-ohana.conf
 Configuration générale du serveur DHCP.
 
 10-infrastructure.conf
@@ -280,7 +279,7 @@ Le service DHCP reste arrêté.
 À l'issue de cette procédure :
 
 - la configuration DHCP est prête ;
-- les réservations sont organisées selon l'architecture d'Ohanna-House ;
+- les réservations sont organisées selon l'architecture d'Ohana-House ;
 - la documentation est intégrée directement dans le répertoire de configuration ;
 - aucune modification n'a encore été apportée au réseau.
 

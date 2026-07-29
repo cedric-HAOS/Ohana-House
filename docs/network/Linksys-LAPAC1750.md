@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Linksys LAPAC1750 |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le point d'accès Wi-Fi de l'infrastructure **Ohanna-House**.
+Ce document décrit le point d'accès Wi-Fi de l'infrastructure **Ohana-House**.
 
 Le point d'accès assure la connectivité sans fil des équipements nécessitant un accès Wi-Fi.
 
@@ -42,7 +42,7 @@ Le point d'accès assure la connectivité sans fil des équipements nécessitant
 
 | Amont | Équipement | Aval |
 |--------|------------|------|
-| SW-01 | AP-01 | RPI-01 |
+| SW-01 | AP-01 | LINKY-01 |
 
 ---
 
@@ -77,7 +77,7 @@ Les autres paramètres (canaux radio, largeur de bande, puissance d'émission, e
 | Interface | Destination | Débit |
 |-----------|-------------|-------:|
 | Ethernet | SW-01 | 1 Gb/s |
-| Wi-Fi | RPI-01 | Selon la qualité radio |
+| Wi-Fi | LINKY-01 | Selon la qualité radio |
 
 Voir également :
 

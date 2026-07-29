@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Freebox Pop |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit la configuration de la Freebox Pop utilisée comme routeur principal de l'infrastructure **Ohanna-House**.
+Ce document décrit la configuration de la Freebox Pop utilisée comme routeur principal de l'infrastructure **Ohana-House**.
 
 La Freebox constitue le point d'entrée du réseau domestique et assure les services indispensables au fonctionnement de l'infrastructure.
 
@@ -29,7 +29,7 @@ Les éléments décrits dans ce document correspondent à l'état de référence
 | Fabricant | Free |
 | Catégorie | Routeur |
 | Fonction principale | Routeur Internet |
-| Adresse IP LAN | 192.168.1.254 |
+| Adresse IP LAN | 192.168.1.1 |
 | Interface réseau | Ethernet 2,5 Gb/s |
 | Criticité | Haute |
 | Supervision | Home Assistant |
@@ -52,10 +52,10 @@ La Freebox assure les fonctions suivantes :
 
 - accès Internet ;
 - routage IPv4 ;
-- serveur DHCP ;
-- gestion des baux statiques ;
+- serveur DHCP de secours pendant les migrations ;
+- terminaison WireGuard ;
 - passerelle par défaut du réseau local ;
-- terminaison WireGuard (à partir de la phase dédiée).
+- routage et NAT du réseau local.
 
 Elle constitue le seul point d'accès entre le réseau local et Internet.
 
@@ -69,7 +69,7 @@ Elle constitue le seul point d'accès entre le réseau local et Internet.
 |-----------|---------|
 | Réseau | 192.168.1.0/24 |
 | Masque | 255.255.255.0 |
-| Passerelle | 192.168.1.254 |
+| Passerelle | 192.168.1.1 |
 
 ---
 
@@ -77,11 +77,12 @@ Elle constitue le seul point d'accès entre le réseau local et Internet.
 
 | Paramètre | Valeur |
 |-----------|---------|
-| Activé | Oui |
-| Début de plage | 192.168.1.2 |
-| Fin de plage | 192.168.1.54 |
+| État cible | Désactivé |
+| Serveur principal | INFRA-01 — dnsmasq |
+| Plage dynamique cible | 192.168.1.100 à 192.168.1.199 |
 
-Les équipements permanents utilisent des réservations DHCP.
+Le DHCP Freebox ne peut être activé que temporairement lors d'une reprise. Il
+doit être désactivé dès que le service INFRA-01 est validé.
 
 Le détail est décrit dans **Adressage-IP.md**.
 
@@ -121,7 +122,7 @@ Les équipements suivants dépendent directement de la Freebox :
 - Point d'accès Linksys
 - Tous les équipements du réseau
 
-Une indisponibilité de la Freebox entraîne une perte d'accès Internet et l'arrêt du serveur DHCP.
+Une indisponibilité de la Freebox entraîne une perte d’accès Internet et de WireGuard. Le DHCP local reste disponible lorsque INFRA-01 est opérationnel.
 
 ---
 

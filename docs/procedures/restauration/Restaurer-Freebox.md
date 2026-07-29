@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Restaurer Freebox Pop |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -18,7 +18,7 @@
 
 # 1. Objectif
 
-Restaurer la configuration de la Freebox Pop afin de remettre en service les fonctionnalités réseau de l'infrastructure Ohanna-House.
+Restaurer la configuration de la Freebox Pop afin de remettre en service les fonctionnalités réseau de l'infrastructure Ohana-House.
 
 ---
 

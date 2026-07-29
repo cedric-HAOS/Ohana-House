@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Ce document décrit la politique de versionnement du projet Ohanna-House.
+Ce document décrit la politique de versionnement du projet Ohana-House.
 
 Chaque version est identifiée par :
 

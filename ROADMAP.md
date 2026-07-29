@@ -1,67 +1,36 @@
 # Roadmap
 
-## Version stable
+## Versions documentaires
 
-### Naruto (v1.0)
+### Naruto v1.0 — historique
 
-- ✅ Documentation complète
-- ✅ Procédures d'exploitation
-- ✅ Procédures d'installation
-- ✅ Procédures de configuration
-- ✅ Procédures de maintenance
-- ✅ Procédures de sauvegarde
-- ✅ Procédures de restauration
-- ✅ Guide de reconstruction
-- ✅ Validation finale
+Premier dossier d'exploitation : inventaire, procédures, sauvegarde,
+restauration et reconstruction.
 
----
+### Hashirama v2.0 — stable
 
-## Développement en cours
+- architecture de référence ;
+- modèle Mission → Capacité → Implémentation ;
+- rôle INFRA-01 ;
+- DHCP, DNS et NTP résilients ;
+- politique d'adressage ;
+- conventions de nommage ;
+- ADR-001 à ADR-007 ;
+- séparation entre état actuel et architecture cible.
 
-### Hashirama (v2.0)
+## Migrations effectuées
 
-Objectif :
+- [x] valider dnsmasq sur INFRA-01 après redémarrage ;
+- [x] désactiver définitivement le DHCP Freebox après validation ;
+- [x] confirmer la stratégie DNS principale/secondaire ;
+- [x] décider de la renumérotation ZWAVE-01 `.11`, LINKY-01 `.12` et HA-01 `.20` ;
 
-Définir l'architecture de référence de l'infrastructure.
+## Migrations restantes
 
-### Sprint 1 ✅
+- [ ] compléter les procédures de sauvegarde et de restauration d'INFRA-01 ;
+- [ ] maintenir l'inventaire Shelly dans Agent et House.
 
-- Vision
-- Architecture cible
-- Architecture-Reference.md
-- Architecture-Conventions.md
-- Modèle Mission → Capacité → Implémentation
-- INFRA-01
-- DHCP
-- DNS
-- NTP
-- Synchronisation DNS
-- Plan d'adressage
-- Convention de nommage
+## Produits logiciels
 
-### Sprint 2 ✅
-
-- ADR-001 à ADR-007
-- Supervision par capacités
-- Politique de sauvegarde
-- Politique de mise à jour
-- Consolidation documentaire
-
-### Sprint 3 🟡
-
-- Déploiement d'INFRA-01
-- Déploiement DHCP
-- Déploiement NTP
-- Synchronisation DNS
-- Supervision
-- Validation de l'architecture
-
----
-
-## Vision
-
-### Ohanna-Agent (v3.0)
-
-Projet logiciel destiné à superviser, administrer et orchestrer les capacités de l'infrastructure Ohanna-House.
-
-Ohanna-Agent constitue l'évolution naturelle de l'architecture définie par Hashirama.
+Ohana-Agent, Ohana-Vision, Ohana-Installer et Ohana-Platform disposent de leurs
+propres roadmaps. Ils ne sont pas une « v3 » d'Ohana-House.

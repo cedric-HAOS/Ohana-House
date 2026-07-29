@@ -2,7 +2,7 @@
 
 ## Vision
 
-Hashirama est la deuxième évolution majeure du projet Ohanna-House.
+Hashirama est la deuxième évolution majeure du projet Ohana-House.
 
 Alors que Naruto avait pour objectif de documenter l'infrastructure, Hashirama a pour objectif d'améliorer sa résilience et son autonomie.
 

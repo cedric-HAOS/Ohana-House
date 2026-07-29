@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Mosquitto |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le broker MQTT Mosquitto utilisé dans l'infrastructure **Ohanna-House**.
+Ce document décrit le broker MQTT Mosquitto utilisé dans l'infrastructure **Ohana-House**.
 
 Mosquitto assure les échanges de messages entre les différents équipements de l'infrastructure et Home Assistant.
 
@@ -39,7 +39,7 @@ Il constitue le point central des communications MQTT.
 
 | Amont | Service | Aval |
 |--------|----------|------|
-| RPI-01 | Mosquitto | HA-01 |
+| LINKY-01 | Mosquitto | HA-01 |
 
 ---
 
@@ -64,7 +64,7 @@ Les équipements MQTT se connectent directement au broker.
 
 À ce jour, les principaux échanges concernent :
 
-- RPI-01 (Téléinformation Linky) ;
+- LINKY-01 (Téléinformation Linky) ;
 - HA-01.
 
 L'architecture permet l'ajout de nouveaux clients MQTT sans modification du broker.
@@ -80,7 +80,7 @@ Mosquitto dépend :
 
 Les équipements suivants utilisent le broker :
 
-- RPI-01 ;
+- LINKY-01 ;
 - HA-01.
 
 De futurs équipements pourront également publier ou consommer des messages MQTT.

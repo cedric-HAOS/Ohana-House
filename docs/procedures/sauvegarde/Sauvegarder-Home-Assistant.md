@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Sauvegarder Home Assistant |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |

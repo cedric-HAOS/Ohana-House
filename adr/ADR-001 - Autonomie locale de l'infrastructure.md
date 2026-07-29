@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Majeur
 
@@ -12,7 +12,7 @@
 
 # Contexte
 
-L'infrastructure Ohanna-House repose sur plusieurs services essentiels :
+L'infrastructure Ohana-House repose sur plusieurs services essentiels :
 
 - automatisation de la maison ;
 - résolution DNS ;
@@ -152,7 +152,7 @@ La dépendance au matériel du fournisseur d'accès reste trop importante.
 
 Non retenue.
 
-Complexité disproportionnée au regard des besoins d'Ohanna-House.
+Complexité disproportionnée au regard des besoins d'Ohana-House.
 
 ---
 

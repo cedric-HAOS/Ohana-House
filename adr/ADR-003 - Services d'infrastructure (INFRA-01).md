@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Majeur
 
@@ -12,7 +12,7 @@
 
 # Contexte
 
-L'architecture Ohanna-House repose sur plusieurs machines spécialisées, chacune ayant une responsabilité clairement identifiée.
+L'architecture Ohana-House repose sur plusieurs machines spécialisées, chacune ayant une responsabilité clairement identifiée.
 
 La mise en œuvre du principe d'autonomie locale (ADR-001) nécessite toutefois qu'un ensemble de capacités fondamentales soit assuré indépendamment de la Freebox et des applications domotiques.
 
@@ -145,7 +145,7 @@ Les implémentations pourront évoluer indépendamment de cet ADR.
 - architecture plus lisible ;
 - restauration facilitée ;
 - réduction des dépendances ;
-- préparation naturelle à Ohanna-Agent ;
+- préparation naturelle à Ohana-Agent ;
 - indépendance vis-à-vis des technologies utilisées.
 
 ## Inconvénients
@@ -210,7 +210,7 @@ Cette décision conduit notamment aux ADR suivants :
 
 # Conclusion
 
-INFRA-01 constitue le socle technique de l'infrastructure Ohanna-House.
+INFRA-01 constitue le socle technique de l'infrastructure Ohana-House.
 
 Sa mission n'est pas d'héberger des logiciels particuliers, mais de garantir les capacités fondamentales nécessaires au fonctionnement autonome de la maison.
 

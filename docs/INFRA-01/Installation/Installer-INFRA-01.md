@@ -1,6 +1,6 @@
 # Installation d'INFRA-01
 
-> Installation du serveur d'infrastructure d'Ohanna-House.
+> Installation du serveur d'infrastructure d'Ohana-House.
 
 ---
 
@@ -36,7 +36,7 @@ Installer le système d'exploitation constituant le socle d'INFRA-01.
 | Distribution | Raspberry Pi OS Lite |
 | Architecture | 64 bits |
 | Interface graphique | Non |
-| Utilisateur | ohanna |
+| Utilisateur | ohana |
 | Authentification | Clé SSH uniquement |
 | Nom d'hôte | INFRA-01 |
 
@@ -59,7 +59,7 @@ Configurer :
 | Paramètre | Valeur |
 |-----------|---------|
 | Hostname | infra-01 |
-| Utilisateur | ohanna |
+| Utilisateur | ohana |
 | Authentification | Clé publique SSH |
 | Activer SSH | Oui |
 | Configurer le Wi-Fi | Non |
@@ -85,13 +85,9 @@ Attendre environ deux minutes.
 
 # Adresse IP
 
-Pendant la phase d'installation, INFRA-01 obtient son adresse via le serveur DHCP existant.
+Pendant l'installation initiale, INFRA-01 peut obtenir temporairement une adresse du DHCP existant. Avant la mise en production de dnsmasq, NetworkManager doit être configuré avec l'adresse statique `192.168.1.10/24`, la passerelle `192.168.1.1` et les DNS prévus.
 
-Une réservation DHCP est créée sur la Freebox afin d'attribuer l'adresse définitive prévue dans le plan d'adressage.
-
-Aucune adresse IP statique n'est configurée sur le système d'exploitation.
-
-Cette approche est conforme à l'ADR-005 — Politique d'adressage IP.
+Cette exception est nécessaire : le serveur DHCP ne doit pas dépendre de son propre service pour retrouver son adresse. Elle est documentée dans l'ADR-005 — Politique d'adressage IP.
 
 ---
 
@@ -100,13 +96,13 @@ Cette approche est conforme à l'ADR-005 — Politique d'adressage IP.
 Depuis le poste d'administration :
 
 ```bash
-ssh ohanna@infra-01.local
+ssh ohana@infra-01.local
 ```
 
 ou
 
 ```bash
-ssh ohanna@<adresse_IP>
+ssh ohana@<adresse_IP>
 ```
 
 ---

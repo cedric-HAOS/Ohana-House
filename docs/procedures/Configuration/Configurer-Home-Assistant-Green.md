@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer Home Assistant Green |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -14,7 +14,7 @@
 
 # 1. Objectif
 
-Configurer l'instance principale Home Assistant de l'infrastructure Ohanna-House.
+Configurer l'instance principale Home Assistant de l'infrastructure Ohana-House.
 
 ---
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Décisions d'architecture |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document recense les principales décisions d'architecture retenues pour l'infrastructure **Ohanna-House**.
+Ce document recense les principales décisions d'architecture retenues pour l'infrastructure **Ohana-House**.
 
 Il explique les motivations techniques ayant conduit à ces choix.
 
@@ -24,19 +24,19 @@ Ce document ne décrit pas la configuration des équipements mais les principes 
 
 # 2. Infrastructure réseau
 
-## Conservation du serveur DHCP sur la Freebox
+## Serveur DHCP sur INFRA-01
 
 ### Décision
 
-Le serveur DHCP est conservé sur la Freebox Pop.
+Le service DHCP cible est fourni par dnsmasq sur INFRA-01. La Freebox ne doit
+conserver son DHCP que temporairement pendant une opération de reprise ou de
+migration.
 
 ### Justification
 
-Le serveur DHCP constitue un service fondamental du réseau.
-
-Le laisser sur la Freebox permet de conserver un fonctionnement minimal du réseau local même si Home Assistant ou un Raspberry Pi deviennent indisponibles.
-
-Cette solution réduit également la complexité d'administration.
+INFRA-01 permet de versionner les réservations, de distribuer explicitement la
+passerelle BOX-01, les deux serveurs DNS et la référence NTP, puis d'administrer
+la configuration par Ohana-Agent. Un seul serveur DHCP reste actif à la fois.
 
 ---
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer les clients VPN |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -18,7 +18,7 @@
 
 # 1. Objectif
 
-Configurer un équipement afin qu'il puisse accéder à distance à l'infrastructure Ohanna-House via WireGuard.
+Configurer un équipement afin qu'il puisse accéder à distance à l'infrastructure Ohana-House via WireGuard.
 
 ---
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Restaurer Raspberry Pi Z-Wave |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -10,15 +10,15 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la reconstruction complète de l'instance **RPI-ZWave** après une perte totale ou un remplacement du Raspberry Pi.
+> Cette procédure décrit la reconstruction complète de l'instance **ZWAVE-01** après une perte totale ou un remplacement du Raspberry Pi.
 >
-> La restauration est réalisée en appliquant les procédures d'installation et de configuration de référence d'Ohanna-House.
+> La restauration est réalisée en appliquant les procédures d'installation et de configuration de référence d'Ohana-House.
 
 ---
 
 # 1. Objectif
 
-Remettre en service l'instance **RPI-ZWave** afin de rétablir le fonctionnement de **Z-Wave JS UI** et des communications avec HA-01.
+Remettre en service l'instance **ZWAVE-01** afin de rétablir le fonctionnement de **Z-Wave JS UI** et des communications avec HA-01.
 
 ---
 

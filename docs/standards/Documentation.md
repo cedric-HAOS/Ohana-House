@@ -115,7 +115,7 @@ Exemple :
 
 | Amont | Équipement | Aval |
 |--------|------------|------|
-| SW-01 | AP-01 | RPI-01 |
+| SW-01 | AP-01 | LINKY-01 |
 
 Cette représentation complète les diagrammes Mermaid sans les remplacer.
 
@@ -234,7 +234,7 @@ Elle utilise la structure suivante :
 
 ### Procédure de configuration
 
-Une procédure de configuration décrit les opérations permettant d'appliquer la configuration de référence d'Ohanna-House à un composant.
+Une procédure de configuration décrit les opérations permettant d'appliquer la configuration de référence d'Ohana-House à un composant.
 
 Elle utilise la structure suivante :
 

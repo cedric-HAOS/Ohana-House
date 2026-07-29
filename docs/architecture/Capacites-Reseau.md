@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Capacités réseau |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document présente les capacités du réseau de l'infrastructure **Ohanna-House**.
+Ce document présente les capacités du réseau de l'infrastructure **Ohana-House**.
 
 Il décrit les performances disponibles, les limites actuelles ainsi que les possibilités d'évolution de l'infrastructure.
 
@@ -40,8 +40,8 @@ Les équipements domotiques sont connectés en Gigabit Ethernet.
 | SW-03 | 5 × 1 Gb | 5 Gb/s cumulés |
 | AP-01 | Ethernet | 1 Gb/s |
 | HA-01 | Ethernet | 1 Gb/s |
-| RPI-02 | Ethernet | 1 Gb/s |
-| RPI-01 | Wi-Fi 802.11ac | Selon la qualité radio |
+| ZWAVE-01 | Ethernet | 1 Gb/s |
+| LINKY-01 | Wi-Fi 802.11ac | Selon la qualité radio |
 
 ---
 

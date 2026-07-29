@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Important
 
@@ -12,7 +12,7 @@
 
 # Contexte
 
-L'infrastructure Ohanna-House est appelée à évoluer au fil du temps.
+L'infrastructure Ohana-House est appelée à évoluer au fil du temps.
 
 De nouveaux équipements, services et passerelles viendront progressivement enrichir l'installation.
 
@@ -107,9 +107,9 @@ Les plages sont définies selon le rôle des équipements et non selon leur tech
 
 ## Réservations DHCP
 
-Les équipements critiques, y compris les serveurs de l'infrastructure, utilisent des réservations DHCP.
+Les équipements critiques utilisent des réservations DHCP, à l'exception d'INFRA-01.
 
-L'utilisation d'adresses IP configurées manuellement est limitée aux cas où une réservation DHCP n'est pas possible.
+INFRA-01 conserve l'adresse statique `192.168.1.10` au niveau du système, car il doit pouvoir démarrer et fournir le DHCP sans dépendre du service qu'il héberge.
 
 ---
 
@@ -117,9 +117,7 @@ L'utilisation d'adresses IP configurées manuellement est limitée aux cas où u
 
 Les serveurs de l'infrastructure suivent la même politique d'adressage que les autres équipements critiques.
 
-Leur adresse IP est attribuée par le serveur DHCP au moyen d'une réservation basée sur leur adresse MAC.
-
-Aucune adresse IP statique n'est configurée dans le système d'exploitation, sauf impossibilité technique.
+Leur adresse IP est normalement attribuée par le serveur DHCP au moyen d'une réservation basée sur leur adresse MAC. INFRA-01 constitue l'exception documentée : son adresse `192.168.1.10` est configurée statiquement dans NetworkManager.
 
 Cette approche facilite :
 
@@ -217,7 +215,7 @@ Cette décision contribue notamment à :
 
 # Conclusion
 
-Le plan d'adressage constitue un élément structurant de l'architecture Ohanna-House.
+Le plan d'adressage constitue un élément structurant de l'architecture Ohana-House.
 
 Il garantit une organisation cohérente, évolutive et indépendante des technologies utilisées.
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer AdGuard Home |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -19,7 +19,7 @@
 
 # 1. Objectif
 
-Configurer le serveur **AdGuard Home** afin de fournir un service DNS sécurisé et centralisé pour l'ensemble de l'infrastructure Ohanna-House.
+Configurer le serveur **AdGuard Home** afin de fournir un service DNS sécurisé et centralisé pour l'ensemble de l'infrastructure Ohana-House.
 
 ---
 

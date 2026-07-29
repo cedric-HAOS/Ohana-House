@@ -1,7 +1,7 @@
 # Topologie réseau
 
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Topologie réseau |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -11,7 +11,7 @@
 
 # 1. Introduction
 
-Ce document décrit la topologie physique du réseau informatique de l'infrastructure **Ohanna-House**.
+Ce document décrit la topologie physique du réseau informatique de l'infrastructure **Ohana-House**.
 
 Il présente les équipements réseau, leurs interconnexions ainsi que les capacités des différentes liaisons.
 
@@ -51,9 +51,9 @@ Le Raspberry Pi Linky est connecté en Wi-Fi.
 | SW-01 | SW-02 | Ethernet | 10 Gb |
 | SW-02 | SW-03 | Ethernet | 1 Gb |
 | SW-01 | AP-01 | Ethernet | 1 Gb |
-| AP-01 | RPI-01 | Wi-Fi | 802.11ac |
+| AP-01 | LINKY-01 | Wi-Fi | 802.11ac |
 | SW-03 | HA-01 | Ethernet | 1 Gb |
-| SW-03 | RPI-02 | Ethernet | 1 Gb |
+| SW-03 | ZWAVE-01 | Ethernet | 1 Gb |
 
 ---
 
@@ -99,7 +99,7 @@ Le switch Linksys Gigabit est exclusivement dédié aux équipements domotiques.
 Il relie :
 
 - HA-01 ;
-- RPI-02.
+- ZWAVE-01.
 
 ---
 
@@ -125,7 +125,7 @@ Elle offre une capacité largement supérieure aux besoins actuels et prépare l
 
 ## Réseau domotique
 
-Les équipements HA-01 et RPI-02 sont regroupés sur SW-03.
+Les équipements HA-01 et ZWAVE-01 sont regroupés sur SW-03.
 
 Leur trafic réseau étant limité, une liaison Gigabit est largement suffisante.
 
@@ -160,8 +160,8 @@ Cette organisation facilite la compréhension du réseau et son évolution.
 | SW-02 ↔ SW-03 | 1 Gb/s |
 | SW-01 ↔ AP-01 | 1 Gb/s |
 | SW-03 ↔ HA-01 | 1 Gb/s |
-| SW-03 ↔ RPI-02 | 1 Gb/s |
-| AP-01 ↔ RPI-01 | Wi-Fi 802.11ac |
+| SW-03 ↔ ZWAVE-01 | 1 Gb/s |
+| AP-01 ↔ LINKY-01 | Wi-Fi 802.11ac |
 
 ---
 

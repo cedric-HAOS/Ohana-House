@@ -6,7 +6,7 @@
 
 # Objectif
 
-Installer le serveur DHCP retenu par l'architecture Ohanna-House.
+Installer le serveur DHCP retenu par l'architecture Ohana-House.
 
 À l'issue de cette procédure, le service DHCP est installé sur INFRA-01 mais n'est pas encore configuré ni mis en production.
 

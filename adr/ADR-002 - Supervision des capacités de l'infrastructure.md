@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Majeur
 
@@ -12,7 +12,7 @@
 
 # Contexte
 
-L'infrastructure Ohanna-House repose sur plusieurs capacités essentielles.
+L'infrastructure Ohana-House repose sur plusieurs capacités essentielles.
 
 Une supervision limitée à l'état des processus logiciels ne permet pas de garantir que ces capacités sont réellement disponibles.
 
@@ -138,7 +138,7 @@ Tous les contrôles produisent un résultat homogène.
 
 - supervision indépendante des technologies ;
 - meilleure détection des défaillances réelles ;
-- préparation à Ohanna-Agent ;
+- préparation à Ohana-Agent ;
 - tableaux de bord plus représentatifs.
 
 ## Inconvénients
@@ -180,7 +180,7 @@ Elle crée une dépendance forte aux technologies employées.
 
 - ADR-003 — Services d'infrastructure (INFRA-01)
 - ADR-007 — Politique de mise à jour de l'infrastructure
-- ADR futur - Ohanna-Agent
+- ADR futur - Ohana-Agent
 
 ---
 

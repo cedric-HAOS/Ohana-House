@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer une instance Home Assistant |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -10,7 +10,7 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la configuration commune à toute instance Home Assistant de l'infrastructure Ohanna-House.
+> Cette procédure décrit la configuration commune à toute instance Home Assistant de l'infrastructure Ohana-House.
 >
 > Elle doit être réalisée après l'installation de Home Assistant OS et avant la configuration spécifique du rôle de l'instance.
 

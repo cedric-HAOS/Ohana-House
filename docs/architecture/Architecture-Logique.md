@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Architecture logique |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit l'architecture logique de l'infrastructure **Ohanna-House**.
+Ce document décrit l'architecture logique de l'infrastructure **Ohana-House**.
 
 Contrairement à la topologie réseau qui décrit les interconnexions physiques entre les équipements, ce document présente les différents services, leurs responsabilités et leurs interactions.
 

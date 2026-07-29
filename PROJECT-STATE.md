@@ -1,52 +1,26 @@
-# Project State
+# État du projet
 
-## Release stable
+## Version documentaire stable
 
-✅ v1.0.0 — Naruto
+**v2.0 — Hashirama**
 
----
+L'architecture de référence, les conventions et les ADR fondateurs sont
+validés. Naruto v1.0 reste l'historique du premier dossier d'exploitation.
 
-## Branche active
+## État du déploiement
 
-hashirama
+| Élément | État |
+|---|---|
+| Architecture de référence | validée |
+| Conventions et ADR-001 à ADR-007 | validés |
+| INFRA-01 | déployé en `192.168.1.10` |
+| Ohana-Agent / Vision | disponibles dans l'écosystème Ohana |
+| Bascule DHCP vers INFRA-01 | à valider définitivement |
+| Renumérotation ZWAVE-01 / LINKY-01 / HA-01 | non réalisée |
+| Documentation état actuel / cible | consolidée |
 
----
+## Prochain jalon
 
-## Version en développement
-
-v2.0.0 — Hashirama
-
----
-
-## Progression
-
-| Élément | Progression |
-|----------|------------:|
-| Vision | 100 % |
-| Architecture de référence | 100 % |
-| Conventions d'architecture | 100 % |
-| ADR fondateurs | 100 % |
-| Consolidation documentaire | 100 % |
-| Déploiement de l'infrastructure | 0 % |
-| Validation de l'architecture | 0 % |
-
----
-
-## Derniers jalons atteints
-
-- ✅ Architecture-Reference.md validé
-- ✅ Architecture-Conventions.md validé
-- ✅ ADR-001 à ADR-007 validés
-- ✅ Sprint de consolidation documentaire terminé
-
----
-
-## Prochaine étape
-
-Déploiement de l'architecture Hashirama :
-
-- mise en place d'INFRA-01 ;
-- déploiement du DHCP ;
-- déploiement du serveur NTP ;
-- synchronisation des serveurs DNS ;
-- mise en œuvre de la supervision.
+Valider le fonctionnement de dnsmasq sur INFRA-01 après redémarrage, désactiver
+le DHCP Freebox, puis décider si la renumérotation cible `.11`, `.12` et `.20`
+est encore utile.

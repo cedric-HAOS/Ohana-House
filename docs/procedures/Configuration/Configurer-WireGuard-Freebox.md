@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer WireGuard (Freebox) |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -19,7 +19,7 @@
 
 # 1. Objectif
 
-Configurer le serveur WireGuard de la Freebox Pop afin de permettre un accès distant sécurisé à l'infrastructure Ohanna-House.
+Configurer le serveur WireGuard de la Freebox Pop afin de permettre un accès distant sécurisé à l'infrastructure Ohana-House.
 
 ---
 

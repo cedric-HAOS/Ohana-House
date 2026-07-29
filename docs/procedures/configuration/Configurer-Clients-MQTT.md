@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer les clients MQTT |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -10,7 +10,7 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la configuration des équipements utilisant le broker **Mosquitto** de l'infrastructure Ohanna-House.
+> Cette procédure décrit la configuration des équipements utilisant le broker **Mosquitto** de l'infrastructure Ohana-House.
 >
 > Elle ne couvre pas la configuration du broker MQTT.
 

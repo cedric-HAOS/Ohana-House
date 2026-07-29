@@ -80,7 +80,7 @@ features:
 
 Les identifiants d'administration des deux instances AdGuard Home sont renseignés directement dans le fichier de configuration lors du déploiement.
 
-Ils ne sont volontairement pas documentés dans Ohanna-House.
+Ils ne sont volontairement pas documentés dans Ohana-House.
 
 ---
 

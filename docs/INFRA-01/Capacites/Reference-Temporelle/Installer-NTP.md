@@ -6,7 +6,7 @@
 
 # Objectif
 
-Installer le serveur NTP retenu par l'architecture Ohanna-House.
+Installer le serveur NTP retenu par l'architecture Ohana-House.
 
 À l'issue de cette procédure, le service NTP est installé mais n'est pas encore configuré ni mis en production.
 

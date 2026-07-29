@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Ce document décrit l'ordre dans lequel reconstruire l'infrastructure **Ohanna-House**.
+Ce document décrit l'ordre dans lequel reconstruire l'infrastructure **Ohana-House**.
 
 Il constitue le point d'entrée du dossier d'exploitation après une perte totale ou lors d'une reconstruction complète.
 

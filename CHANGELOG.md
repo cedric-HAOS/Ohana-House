@@ -1,8 +1,20 @@
 # Changelog
 
-## [2.0.0-Hashirama] (en développement)
+## [2.0.0-Hashirama] - 2026-07-29
+
+### Corrigé
+
+- orthographe unique `Ohana` dans tout le dépôt ;
+- séparation de l'état actuellement déployé et de l'architecture cible ;
+- plan d'adressage sans collision active avec INFRA-01 ;
+- identifiants unifiés BOX-01, INFRA-01, LINKY-01, ZWAVE-01 et HA-01 ;
+- statut Hashirama aligné sur la version stable ;
+- intégration documentaire avec Platform, Agent, Vision et Installer ;
+- noms de fichiers ADR restaurés en UTF-8.
 
 ### Ajout
+
+- `Etat-Actuel.md`.
 
 - HASHIRAMA.md
 - Architecture-Reference.md
@@ -43,7 +55,7 @@
 - Introduction des Architecture Decision Records (ADR)
 - Séparation entre architecture (Hashirama) et implémentation (Naruto)
 - Standardisation des conventions d'architecture
-- Préparation de l'écosystème Ohanna-Agent
+- Intégration avec l'écosystème Ohana
 
 ---
 

@@ -1,6 +1,6 @@
 # Configuration d'INFRA-01
 
-> Configuration de base du serveur d'infrastructure d'Ohanna-House.
+> Configuration de base du serveur d'infrastructure d'Ohana-House.
 
 ---
 
@@ -44,14 +44,14 @@ sudo apt autoclean
 
 # Vérification de l'identité du système
 
-Contrôler l'adresse IP' :
+Contrôler l'adresse IP :
 
 ```bash
 ip addr
 ```
 Résultat attendu :
 
-Vérifier que l'adresse obtenue correspond à la réservation DHCP prévue pour INFRA-01 :
+Vérifier que l'adresse statique `192.168.1.10/24` est active sur l'interface réseau d'INFRA-01.
 
 Contrôler le nom d'hôte :
 

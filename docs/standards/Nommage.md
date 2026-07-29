@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Ce document définit les conventions de nommage utilisées dans le projet **Ohanna-House**.
+Ce document définit les conventions de nommage utilisées dans le projet **Ohana-House**.
 
 Ces conventions garantissent une documentation homogène, facilitent la recherche d'informations et simplifient l'évolution de l'infrastructure.
 
@@ -34,7 +34,7 @@ SW-01
 | SW | Switch Ethernet | SW-01 |
 | AP | Point d'accès Wi-Fi | AP-01 |
 | HA | Serveur Home Assistant | HA-01 |
-| RPI | Raspberry Pi | RPI-01 |
+| RPI | Raspberry Pi | LINKY-01 |
 | NAS | Serveur de stockage | NAS-01 |
 | UPS | Onduleur | UPS-01 |
 

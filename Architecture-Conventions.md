@@ -1,6 +1,6 @@
 # Architecture Conventions
 
-> Ce document définit les conventions utilisées dans l'ensemble du projet Ohanna-House.
+> Ce document définit les conventions utilisées dans l'ensemble du projet Ohana-House.
 
 ---
 
@@ -136,7 +136,7 @@ Exemple :
 ```text
 /opt/
 ├── adguardhome-sync/
-├── ohanna-agent/
+├── ohana-agent/
 └── ...
 ```
 
@@ -160,7 +160,7 @@ Cette convention garantit :
 
 # 8. Convention des informations sensibles
 
-La documentation Ohanna-House ne contient jamais :
+La documentation Ohana-House ne contient jamais :
 
 - de mots de passe ;
 - de clés API ;
@@ -177,19 +177,19 @@ Les secrets sont stockés directement sur les machines concernées selon les mé
 
 Tous les topics utiliseront le préfixe :
 
-ohanna/
+ohana/
 
 Exemple :
 
-ohanna/health
+ohana/health
 
-ohanna/dns/sync
+ohana/dns/sync
 
-ohanna/dhcp/state
+ohana/dhcp/state
 
 ---
 
-# 10. Convention Ohanna-Agent (future)
+# 10. Convention Ohana-Agent (future)
 
 Chaque plugin devra :
 
@@ -203,6 +203,6 @@ Chaque plugin devra :
 
 # Conclusion
 
-Les conventions définies dans ce document constituent les règles communes de conception de tous les projets de l'écosystème Ohanna-House.
+Les conventions définies dans ce document constituent les règles communes de conception de tous les projets de l'écosystème Ohana-House.
 
 Toute nouvelle architecture, documentation ou évolution devra respecter ces conventions afin de garantir la cohérence de l'ensemble.

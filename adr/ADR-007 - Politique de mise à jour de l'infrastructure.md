@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Important
 
@@ -12,7 +12,7 @@
 
 # Contexte
 
-L'infrastructure Ohanna-House est composée de plusieurs machines assurant des capacités complémentaires.
+L'infrastructure Ohana-House est composée de plusieurs machines assurant des capacités complémentaires.
 
 Chaque mise à jour comporte un risque potentiel :
 
@@ -176,7 +176,7 @@ Cette décision conduit notamment à :
 
 - des procédures de mise à jour dans Naruto ;
 - une supervision post-mise à jour ;
-- une automatisation future par Ohanna-Agent.
+- une automatisation future par Ohana-Agent.
 
 ---
 

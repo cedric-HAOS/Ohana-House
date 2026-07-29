@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Important
 
@@ -12,7 +12,7 @@
 
 # Contexte
 
-L'infrastructure Ohanna-House repose sur deux serveurs DNS locaux afin de garantir la continuité de la résolution de noms.
+L'infrastructure Ohana-House repose sur deux serveurs DNS locaux afin de garantir la continuité de la résolution de noms.
 
 Cette redondance améliore la disponibilité de la capacité de résolution DNS.
 
@@ -117,7 +117,7 @@ L'ajout d'une nouvelle instance DNS ne doit pas remettre en cause cette architec
 - administration simplifiée ;
 - réduction des erreurs humaines ;
 - meilleure résilience ;
-- préparation à l'automatisation par Ohanna-Agent.
+- préparation à l'automatisation par Ohana-Agent.
 
 ## Inconvénients
 

@@ -4,7 +4,7 @@
 >
 > **Date :** 2026-07-06
 >
-> **Décideurs :** Projet Ohanna-House
+> **Décideurs :** Projet Ohana-House
 >
 > **Impact :** Important
 
@@ -107,7 +107,7 @@ En cas de panne majeure, la machine est reconstruite à partir d'une installatio
 
 ## Documentation avant automatisation
 
-La procédure manuelle doit exister avant toute automatisation future par Ohanna-Agent.
+La procédure manuelle doit exister avant toute automatisation future par Ohana-Agent.
 
 ---
 
@@ -127,7 +127,7 @@ Les éléments suivants devront être inclus dans la stratégie de sauvegarde :
 - configuration de synchronisation DNS ;
 - scripts d'administration ;
 - configuration de supervision ;
-- configuration future d'Ohanna-Agent.
+- configuration future d'Ohana-Agent.
 
 ---
 
@@ -186,7 +186,7 @@ Cette décision conduit notamment à :
 - une procédure de sauvegarde d'INFRA-01 ;
 - une procédure de restauration d'INFRA-01 ;
 - une vérification périodique de restaurabilité ;
-- une future intégration possible dans Ohanna-Agent.
+- une future intégration possible dans Ohana-Agent.
 
 ---
 

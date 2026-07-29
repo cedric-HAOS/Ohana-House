@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Inventaire |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -38,7 +38,7 @@ Exemple :
 - SW-01
 - AP-01
 - HA-01
-- RPI-01
+- LINKY-01
 
 Ces identifiants sont permanents et ne changent pas, même en cas de remplacement du matériel par un modèle équivalent.
 
@@ -48,11 +48,12 @@ Ces identifiants sont permanents et ne changent pas, même en cas de remplacemen
 
 | ID | Équipement | Modèle | Fonction | Criticité |
 |----|------------|---------|----------|-----------|
-| BOX-01 | Freebox Pop | Freebox Pop | Accès Internet, DHCP | ⭐⭐⭐⭐⭐ |
+| BOX-01 | Freebox Pop | Freebox Pop | Accès Internet, routage, NAT et WireGuard | ⭐⭐⭐⭐⭐ |
 | SW-01 | Switch principal | TRENDnet TEG-S762 | Distribution réseau | ⭐⭐⭐⭐⭐ |
 | SW-02 | Switch secondaire | TRENDnet TEG-S762 | Backbone réseau | ⭐⭐⭐⭐ |
 | SW-03 | Switch domotique | Linksys 5 ports Gigabit | Réseau domotique | ⭐⭐⭐ |
 | AP-01 | Point d'accès Wi-Fi | Linksys LAPAC1750 | Réseau Wi-Fi | ⭐⭐⭐ |
+| INFRA-01 | Serveur d'infrastructure | Debian 13 | DHCP, NTP, administration Ohana | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -61,8 +62,8 @@ Ces identifiants sont permanents et ne changent pas, même en cas de remplacemen
 | ID | Équipement | Modèle | Fonction | Criticité |
 |----|------------|---------|----------|-----------|
 | HA-01 | Home Assistant Green | Home Assistant Green | Instance principale | ⭐⭐⭐⭐⭐ |
-| RPI-01 | Raspberry Pi Linky | Raspberry Pi 4 | Téléinformation Linky | ⭐⭐ |
-| RPI-02 | Raspberry Pi Z-Wave | Raspberry Pi 4 | Z-Wave JS UI | ⭐⭐⭐ |
+| LINKY-01 | Raspberry Pi Linky | Raspberry Pi 4 | Téléinformation Linky | ⭐⭐ |
+| ZWAVE-01 | Raspberry Pi Z-Wave | Raspberry Pi 4 | Z-Wave JS UI | ⭐⭐⭐ |
 
 ---
 
@@ -70,9 +71,10 @@ Ces identifiants sont permanents et ne changent pas, même en cas de remplacemen
 
 | Équipement | Services |
 |------------|----------|
+| INFRA-01 | dnsmasq, Chrony, Ohana-Agent |
 | HA-01 | Home Assistant Core, Mosquitto, Add-ons |
-| RPI-01 | Home Assistant OS, Téléinformation, Publication MQTT, AdGuard Home |
-| RPI-02 | Home Assistant OS, Z-Wave JS UI, RaZberry, AdGuard Home |
+| LINKY-01 | Home Assistant OS, Téléinformation, Publication MQTT, AdGuard Home |
+| ZWAVE-01 | Home Assistant OS, Z-Wave JS UI, RaZberry, AdGuard Home |
 
 ---
 

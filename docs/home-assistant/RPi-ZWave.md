@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Raspberry Pi Z-Wave |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le Raspberry Pi dédié au réseau Z-Wave de l'infrastructure **Ohanna-House**.
+Ce document décrit le Raspberry Pi dédié au réseau Z-Wave de l'infrastructure **Ohana-House**.
 
 Cette machine est exclusivement utilisée pour héberger le serveur Z-Wave JS UI et piloter le contrôleur Z-Wave.
 
@@ -24,7 +24,7 @@ Le choix d'une machine dédiée permet d'isoler le réseau Z-Wave de la platefor
 
 | Élément | Valeur |
 |---------|--------|
-| Identifiant | RPI-02 |
+| Identifiant | ZWAVE-01 |
 | Nom | Raspberry Pi Z-Wave |
 | Fabricant | Raspberry Pi Foundation |
 | Catégorie | Serveur Z-Wave |
@@ -42,13 +42,13 @@ Le choix d'une machine dédiée permet d'isoler le réseau Z-Wave de la platefor
 
 | Amont | Composant | Aval |
 |--------|-----------|------|
-| Contrôleur RaZberry | RPI-02 | HA-01 |
+| Contrôleur RaZberry | ZWAVE-01 | HA-01 |
 
 ---
 
 # 4. Responsabilités
 
-RPI-02 assure les fonctions suivantes :
+ZWAVE-01 assure les fonctions suivantes :
 
 - hébergement du serveur Z-Wave JS UI ;
 - gestion du réseau Z-Wave ;
@@ -78,13 +78,13 @@ Les paramètres détaillés du réseau Z-Wave sont documentés dans la configura
 
 # 6. Dépendances
 
-RPI-02 dépend :
+ZWAVE-01 dépend :
 
 - de l'alimentation électrique ;
 - du réseau Ethernet ;
 - du contrôleur RaZberry.
 
-HA-01 dépend de RPI-02 pour accéder au réseau Z-Wave.
+HA-01 dépend de ZWAVE-01 pour accéder au réseau Z-Wave.
 
 Une indisponibilité de HA-01 n'interrompt pas le fonctionnement de Z-Wave JS UI, mais les équipements Z-Wave ne sont plus exploités par Home Assistant.
 
@@ -99,7 +99,7 @@ Une indisponibilité de HA-01 n'interrompt pas le fonctionnement de Z-Wave JS UI
 | Fonctionnement global | Partiel |
 | Redondance | Aucune |
 
-Une panne de RPI-02 entraîne l'arrêt de toutes les communications avec les équipements Z-Wave.
+Une panne de ZWAVE-01 entraîne l'arrêt de toutes les communications avec les équipements Z-Wave.
 
 ---
 
@@ -165,6 +165,6 @@ Les évolutions actuellement identifiées sont :
 
 ---
 
-Le présent document décrit la configuration de référence de RPI-02.
+Le présent document décrit la configuration de référence de ZWAVE-01.
 
 Toute modification importante devra être reportée dans cette documentation avant sa mise en production.

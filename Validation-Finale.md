@@ -2,15 +2,15 @@
 
 ## Objectif
 
-Vérifier que l'ensemble de l'infrastructure Ohanna-House est opérationnel après une reconstruction ou une intervention majeure.
+Vérifier que l'ensemble de l'infrastructure Ohana-House est opérationnel après une reconstruction ou une intervention majeure.
 
 ---
 
 # Infrastructure
 
 - [ ] HA-01 est accessible.
-- [ ] RPI-Linky est accessible.
-- [ ] RPI-ZWave est accessible.
+- [ ] LINKY-01 est accessible.
+- [ ] ZWAVE-01 est accessible.
 
 ---
 

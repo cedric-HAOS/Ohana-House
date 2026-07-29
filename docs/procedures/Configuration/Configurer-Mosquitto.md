@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Configurer Mosquitto |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -18,7 +18,7 @@
 
 # 1. Objectif
 
-Configurer le broker MQTT utilisé par l'ensemble de l'infrastructure Ohanna-House.
+Configurer le broker MQTT utilisé par l'ensemble de l'infrastructure Ohana-House.
 
 ---
 

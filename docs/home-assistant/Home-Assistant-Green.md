@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | Home Assistant Green |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit l'instance principale **Home Assistant Green** de l'infrastructure **Ohanna-House**.
+Ce document décrit l'instance principale **Home Assistant Green** de l'infrastructure **Ohana-House**.
 
 HA-01 constitue le cœur du système domotique. Il centralise les données, orchestre les interactions entre les différents composants de l'infrastructure et fournit les services nécessaires au pilotage de l'habitation.
 
@@ -70,7 +70,7 @@ Les fonctions spécialisées (téléinformation, Z-Wave, DNS, VPN...) sont volon
 
 | Source | Traitement | Destination |
 |---------|------------|-------------|
-| Compteur Linky | RPI-01 | Mosquitto |
+| Compteur Linky | LINKY-01 | Mosquitto |
 | Mosquitto | HA-01 | Entités Home Assistant |
 | Home Assistant | Tableaux de bord | Utilisateurs |
 
@@ -80,8 +80,8 @@ Les fonctions spécialisées (téléinformation, Z-Wave, DNS, VPN...) sont volon
 
 | Source | Traitement | Destination |
 |---------|------------|-------------|
-| Modules Z-Wave | Contrôleur RaZberry | RPI-02 |
-| RPI-02 | HA-01 | Entités Home Assistant |
+| Modules Z-Wave | Contrôleur RaZberry | ZWAVE-01 |
+| ZWAVE-01 | HA-01 | Entités Home Assistant |
 
 ---
 
@@ -105,7 +105,7 @@ Les fonctions spécialisées (téléinformation, Z-Wave, DNS, VPN...) sont volon
 
 | Source | Traitement | Destination |
 |---------|------------|-------------|
-| RPI-01 | Mosquitto | HA-01 |
+| LINKY-01 | Mosquitto | HA-01 |
 
 ---
 
@@ -147,8 +147,8 @@ Les autres services sont documentés dans leurs documents respectifs.
 - SW-03
 - AdGuard Home
 - Mosquitto
-- RPI-01
-- RPI-02
+- LINKY-01
+- ZWAVE-01
 
 ---
 

@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Procédure | Restaurer Home Assistant |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |

@@ -56,50 +56,49 @@ Vérifier également :
 ip addr
 ```
 
-INFRA-01 doit disposer de son adresse obtenue par réservation DHCP.
+INFRA-01 doit disposer de son adresse statique `192.168.1.10/24` avant l’activation de dnsmasq.
 
 ---
 
-# Activation de dnsmasq
+# Préparation de dnsmasq
 
-Autoriser le démarrage automatique :
+Autoriser son démarrage automatique sans le lancer :
 
 ```bash
 sudo systemctl enable dnsmasq
 ```
 
-Démarrer le service :
+Vérifier une dernière fois la configuration :
+
+```bash
+sudo dnsmasq --test
+```
+
+---
+
+# Bascule DHCP
+
+Depuis l'interface d'administration de la Freebox :
+
+- désactiver le serveur DHCP ;
+- appliquer la configuration ;
+- ne modifier aucun autre paramètre réseau.
+
+Démarrer immédiatement dnsmasq depuis la console locale d'INFRA-01 :
 
 ```bash
 sudo systemctl start dnsmasq
-```
-
-Contrôler :
-
-```bash
 systemctl status dnsmasq
 ```
 
 Résultat attendu :
 
-```
+```text
 active (running)
 ```
 
-À ce stade, deux serveurs DHCP coexistent encore.
-
-Cette situation doit rester temporaire.
-
----
-
-# Désactivation du DHCP de BOX-01
-
-Depuis l'interface d'administration de la Freebox :
-
-- désactiver le serveur DHCP ;
-- appliquer la configuration.
-
-Ne modifier aucun autre paramètre réseau.
+Un seul serveur DHCP doit être actif. Si dnsmasq ne démarre pas, réactiver le
+DHCP Freebox avant de poursuivre le diagnostic.
 
 ---
 
@@ -164,7 +163,7 @@ ping github.com
 Résolution DNS locale :
 
 ```bash
-ping ha-01.ohanna.lan
+ping ha-01.ohana.lan
 ```
 
 Synchronisation NTP :
@@ -226,7 +225,7 @@ Analyser les journaux avant toute nouvelle tentative.
 - INFRA-01 assure la capacité DHCP ;
 - BOX-01 ne distribue plus d'adresses IP ;
 - les réservations DHCP sont opérationnelles ;
-- le plan d'adressage d'Ohanna-House est appliqué.
+- le plan d'adressage d'Ohana-House est appliqué.
 
 ---
 

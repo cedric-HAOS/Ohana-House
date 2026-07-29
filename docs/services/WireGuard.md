@@ -2,7 +2,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Document | WireGuard |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
@@ -12,7 +12,7 @@
 
 # 1. Introduction
 
-Ce document décrit le service VPN **WireGuard** utilisé dans l'infrastructure **Ohanna-House**.
+Ce document décrit le service VPN **WireGuard** utilisé dans l'infrastructure **Ohana-House**.
 
 WireGuard permet un accès distant sécurisé au réseau domestique.
 

@@ -1,6 +1,8 @@
 # Architecture Reference
 
-> Document de référence de l'architecture cible d'Ohanna-House.
+> Document de référence de l'architecture cible d'Ohana-House.
+>
+> L’état réellement déployé est décrit dans `Etat-Actuel.md`.
 >
 > Ce document décrit l'architecture fonctionnelle de l'infrastructure.
 > Il constitue la référence de conception du projet Hashirama.
@@ -13,7 +15,7 @@
 
 | Élément | Valeur |
 |---------|--------|
-| Projet | Ohanna-House |
+| Projet | Ohana-House |
 | Phase | Hashirama |
 | Version | 2.0 |
 | Statut | 🟢 Validé |
@@ -22,7 +24,7 @@
 
 # 1. Vision
 
-L'objectif d'Ohanna-House est de construire une infrastructure :
+L'objectif d'Ohana-House est de construire une infrastructure :
 
 - autonome ;
 - documentée ;
@@ -36,7 +38,7 @@ L'infrastructure doit continuer à assurer les fonctions essentielles même en c
 
 # 2. Modèle architectural
 
-L'architecture d'Ohanna-House repose sur trois niveaux complémentaires :
+L'architecture d'Ohana-House repose sur trois niveaux complémentaires :
 
 Mission
 ↓
@@ -187,6 +189,16 @@ Capacité : Référence temporelle
 | .50-.99 | Équipements critiques |
 | .100-.199 | DHCP dynamique |
 | .200-.254 | Réserve |
+
+Adresses cibles des composants structurants :
+
+| Identifiant | Adresse cible |
+|---|---:|
+| BOX-01 | 192.168.1.1 |
+| INFRA-01 | 192.168.1.10 |
+| ZWAVE-01 | 192.168.1.11 |
+| LINKY-01 | 192.168.1.12 |
+| HA-01 | 192.168.1.20 |
 
 ---
 
