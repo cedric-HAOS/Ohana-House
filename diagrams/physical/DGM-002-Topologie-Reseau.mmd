@@ -1,17 +1,39 @@
-flowchart LR
-    BOX["BOX-01<br/>Freebox Pop<br/>Routeur / DHCP / WireGuard"]
-    SW1["SW-01<br/>TRENDnet TEG-S762<br/>Switch principal"]
-    SW2["SW-02<br/>TRENDnet TEG-S762<br/>Switch secondaire"]
-    SW3["SW-03<br/>Linksys 5 ports<br/>Switch domotique"]
-    AP["AP-01<br/>Linksys LAPAC1750<br/>Point d'accès Wi-Fi"]
-    HA["HA-01<br/>Home Assistant Green<br/>Ethernet"]
-    RPI_ZWAVE["RPI-02<br/>Raspberry Pi Z-Wave<br/>Ethernet"]
-    RPI_LINKY["RPI-01<br/>Raspberry Pi Linky<br/>Wi-Fi"]
+flowchart TD
+    Internet((Internet))
 
-    BOX -- "Ethernet 2.5 Gb" --> SW1
-    SW1 -- "Ethernet 10 Gb" --> SW2
-    SW2 -- "Ethernet 1 Gb" --> SW3
-    SW1 -- "Ethernet 1 Gb" --> AP
-    SW3 -- "Ethernet 1 Gb" --> HA
-    SW3 -- "Ethernet 1 Gb" --> RPI_ZWAVE
-    AP -. "Wi-Fi" .-> RPI_LINKY
+    BOX["BOX-01<br/>Freebox Pop<br/>Passerelle Internet<br/>NAT / WireGuard"]
+
+    LAN["Réseau local"]
+
+    INFRA["INFRA-01<br/>DHCP / NTP / Supervision"]
+
+    ZWAVE["ZWAVE-01<br/>DNS principal<br/>Z-Wave"]
+
+    LINKY["LINKY-01<br/>DNS secondaire<br/>Téléinformation"]
+
+    HA["HA-01<br/>Home Assistant<br/>MQTT"]
+
+    AP["AP-01<br/>Point d'accès Wi-Fi"]
+
+    CLIENTS["Clients réseau<br/>PC / mobiles / objets connectés"]
+
+    Internet --> BOX
+    BOX --> LAN
+
+    LAN --> INFRA
+    LAN --> ZWAVE
+    LAN --> LINKY
+    LAN --> HA
+    LAN --> AP
+    LAN --> CLIENTS
+
+    INFRA -- "DHCP<br/>IP + passerelle + DNS + NTP" --> CLIENTS
+
+    INFRA -- "NTP" --> HA
+    INFRA -- "NTP" --> ZWAVE
+    INFRA -- "NTP" --> LINKY
+
+    CLIENTS -- "DNS principal" --> ZWAVE
+    CLIENTS -- "DNS secondaire" --> LINKY
+
+    HA -- "Pilotage local" --> CLIENTS

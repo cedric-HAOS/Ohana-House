@@ -34,7 +34,7 @@ SW-01
 | SW | Switch Ethernet | SW-01 |
 | AP | Point d'accès Wi-Fi | AP-01 |
 | HA | Serveur Home Assistant | HA-01 |
-| RPI | Raspberry Pi | RPI-01 |
+| RPI | Raspberry Pi | LINKY-01 |
 | NAS | Serveur de stockage | NAS-01 |
 | UPS | Onduleur | UPS-01 |
 

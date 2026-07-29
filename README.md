@@ -2,101 +2,93 @@
 
 # Ohana-House
 
-Documentation technique de l'infrastructure informatique et domotique de la
-maison, déploiement de référence de l'écosystème Ohana.
+Architecture, documentation et exploitation de l'infrastructure informatique et
+domotique de référence d'Ohana.
 
-![Version](https://img.shields.io/badge/stable-v1.0.0%20Naruto-blue)
-![Status](https://img.shields.io/badge/status-active-orange)
-![Branch](https://img.shields.io/badge/branch-Hashirama-purple)
+![Version](https://img.shields.io/badge/version-v2.0%20Hashirama-blue)
+![Documentation](https://img.shields.io/badge/documentation-référence-green)
+![Status](https://img.shields.io/badge/status-stable-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 </div>
 
 ## Présentation
 
-Ohana-House décrit :
+Ohana-House décrit l'infrastructure de la maison, ses équipements, ses services,
+ses procédures et les décisions qui encadrent son évolution.
 
-- l'architecture physique et logique ;
-- les équipements réseau et domotiques ;
-- les services installés ;
-- les procédures d'installation, d'exploitation et de restauration ;
-- les décisions et standards techniques ;
-- le déploiement de référence d'Ohana-Agent et d'Ohana-Vision.
+Le dépôt distingue volontairement trois niveaux :
 
-L'objectif est qu'une installation puisse être comprise, maintenue et
-reconstruite sans dépendre uniquement de la mémoire de son administrateur.
+1. **état actuellement déployé**, décrit dans [`Etat-Actuel.md`](Etat-Actuel.md) ;
+2. **architecture cible Hashirama**, décrite dans
+   [`Architecture-Reference.md`](Architecture-Reference.md) ;
+3. **migrations restantes**, suivies dans [`ROADMAP.md`](ROADMAP.md).
 
-## État du projet
+Cette distinction évite de présenter comme déjà déployée une adresse, une
+capacité ou une responsabilité encore en cours de migration.
 
-| Élément | Valeur |
-| --- | --- |
-| Release stable | `v1.0.0-Naruto` |
-| Branche de développement | `Hashirama` |
-| Prochaine release | `v2.0.0-Hashirama` |
+## Relation avec l'écosystème Ohana
 
-Les détails sont maintenus dans [PROJECT-STATE.md](PROJECT-STATE.md) et
-[ROADMAP.md](ROADMAP.md).
+| Projet | Rôle |
+|---|---|
+| Ohana-Platform | architecture commune et composition des releases |
+| Ohana-Agent | source de vérité opérationnelle et observations |
+| Ohana-Vision | visualisation et administration via Agent |
+| Ohana-Installer | installation et mise à jour Linux/systemd |
+| Ohana-House | déploiement domestique réel et cible |
 
-## Structure
+Ohana-House documente le déploiement. La configuration opérationnelle utilisée
+par Vision reste portée par Ohana-Agent.
+
+## Structure du dépôt
 
 ```text
 Ohana-House/
-├── adr/
-├── diagrams/
-│   ├── flows/
-│   ├── logical/
-│   └── physical/
-├── docs/
-│   ├── architecture/
-│   ├── home-assistant/
-│   ├── network/
-│   ├── procedures/
-│   ├── services/
-│   └── standards/
-├── CHANGELOG.md
-├── Chemin-Critique-de-Reconstruction.md
-├── Guide-de-Reconstruction.md
-├── HASHIRAMA.md
+├── README.md
+├── START-HERE.md
+├── Etat-Actuel.md
 ├── PROJECT-STATE.md
 ├── ROADMAP.md
-├── START-HERE.md
-└── Validation-Finale.md
+├── CHANGELOG.md
+├── HASHIRAMA.md
+├── Architecture-Reference.md
+├── Architecture-Conventions.md
+├── adr/
+├── diagrams/
+└── docs/
+    ├── architecture/
+    ├── home-assistant/
+    ├── network/
+    ├── procedures/
+    ├── services/
+    └── standards/
 ```
 
 ## Documents principaux
 
-- [Point d'entrée](START-HERE.md)
-- [Architecture](docs/architecture/Architecture.md)
-- [Topologie réseau](docs/architecture/Topologie-Reseau.md)
-- [Inventaire](docs/architecture/Inventaire.md)
-- [Administrer l'infrastructure avec Vision](docs/procedures/configuration/Administrer-Ohana-avec-Vision.md)
-- [Guide de reconstruction](Guide-de-Reconstruction.md)
-- [Chemin critique de reconstruction](Chemin-Critique-de-Reconstruction.md)
-- [Validation finale](Validation-Finale.md)
-- [Standards documentaires](docs/standards/Documentation.md)
-
-## Domaines couverts
-
-| Domaine | Contenu |
-| --- | --- |
-| Réseau | Freebox Pop, commutateurs, Wi-Fi, DNS et WireGuard |
-| Domotique | Home Assistant, MQTT, Z-Wave et Linky |
-| Exploitation | Installation, configuration, sauvegarde, maintenance, restauration et migration |
-| Standards | Versionnement, nommage et rédaction documentaire |
+- [`START-HERE.md`](START-HERE.md) — parcours de lecture ;
+- [`Etat-Actuel.md`](Etat-Actuel.md) — état réellement déployé et écarts ;
+- [`Architecture-Reference.md`](Architecture-Reference.md) — cible Hashirama ;
+- [`docs/architecture/Adressage-IP.md`](docs/architecture/Adressage-IP.md) —
+  adressage actuel et cible ;
+- [`docs/architecture/Inventaire.md`](docs/architecture/Inventaire.md) —
+  inventaire des composants ;
+- [`Guide-de-Reconstruction.md`](Guide-de-Reconstruction.md) — ordre de
+  reconstruction ;
+- [`Validation-Finale.md`](Validation-Finale.md) — vérifications finales.
 
 ## Diagrammes
 
-Les diagrammes officiels sont rédigés en Mermaid dans `diagrams/`.
+Les diagrammes Mermaid de référence sont dans `diagrams/` : architecture
+physique, topologie réseau, architecture logique et flux DNS, MQTT, Z-Wave et
+WireGuard.
 
-| ID | Diagramme |
-| --- | --- |
-| DGM-001 | Architecture physique |
-| DGM-002 | Topologie réseau |
-| DGM-003 | Architecture logique |
-| DGM-004 | Flux MQTT |
-| DGM-005 | Flux Z-Wave |
-| DGM-006 | Flux DNS / WireGuard |
+## Version
+
+Hashirama v2.0 est la version documentaire stable. Les composants logiciels
+Ohana-Agent, Ohana-Vision et Ohana-Installer évoluent dans leurs propres dépôts
+et ne constituent plus des versions futures d'Ohana-House.
 
 ## Licence
 
-Ce projet est distribué sous licence MIT. Voir [LICENSE](LICENSE).
+Projet distribué sous licence MIT.

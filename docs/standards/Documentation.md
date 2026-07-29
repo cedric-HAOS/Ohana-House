@@ -115,7 +115,7 @@ Exemple :
 
 | Amont | Équipement | Aval |
 |--------|------------|------|
-| SW-01 | AP-01 | RPI-01 |
+| SW-01 | AP-01 | LINKY-01 |
 
 Cette représentation complète les diagrammes Mermaid sans les remplacer.
 

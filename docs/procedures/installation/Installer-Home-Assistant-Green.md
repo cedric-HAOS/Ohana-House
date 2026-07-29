@@ -112,13 +112,13 @@ Ne pas restaurer de sauvegarde à cette étape.
 
 ## Étape 6
 
-Attribuer l'adresse IP statique prévue dans l'infrastructure :
+Attribuer l’adresse stable prévue dans l’infrastructure au moyen d’une réservation DHCP :
 
 ```
 192.168.1.247
 ```
 
-La réservation DHCP est réalisée sur BOX-01 conformément au document **Adressage-IP.md**.
+La réservation DHCP est gérée par INFRA-01 conformément au document **Adressage-IP.md**.
 
 ---
 

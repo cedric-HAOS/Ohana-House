@@ -9,8 +9,8 @@ Vérifier que l'ensemble de l'infrastructure Ohana-House est opérationnel aprè
 # Infrastructure
 
 - [ ] HA-01 est accessible.
-- [ ] RPI-Linky est accessible.
-- [ ] RPI-ZWave est accessible.
+- [ ] LINKY-01 est accessible.
+- [ ] ZWAVE-01 est accessible.
 
 ---
 

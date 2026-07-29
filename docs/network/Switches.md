@@ -36,7 +36,7 @@ Les switchs utilisés sont des équipements non administrables (unmanaged). Ils 
 |--------|------------|------|
 | BOX-01 | SW-01 | SW-02 / AP-01 |
 | SW-01 | SW-02 | SW-03 |
-| SW-02 | SW-03 | HA-01 / RPI-02 |
+| SW-02 | SW-03 | HA-01 / ZWAVE-01 |
 
 ---
 
@@ -68,7 +68,7 @@ Le switch Linksys est dédié aux équipements domotiques.
 Il distribue le réseau aux équipements suivants :
 
 - HA-01
-- RPI-02
+- ZWAVE-01
 
 ---
 
@@ -95,7 +95,7 @@ Aucune configuration particulière n'est nécessaire.
 | SW-02 | SW-03 | 1 Gb/s |
 | SW-01 | AP-01 | 1 Gb/s |
 | SW-03 | HA-01 | 1 Gb/s |
-| SW-03 | RPI-02 | 1 Gb/s |
+| SW-03 | ZWAVE-01 | 1 Gb/s |
 
 Les interconnexions sont décrites en détail dans **Topologie-Reseau.md**.
 

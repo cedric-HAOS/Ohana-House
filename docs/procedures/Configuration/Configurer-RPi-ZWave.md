@@ -10,7 +10,7 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la configuration de l'instance **RPI-ZWave** après l'installation de Home Assistant OS.
+> Cette procédure décrit la configuration de l'instance **ZWAVE-01** après l'installation de Home Assistant OS.
 >
 > Elle ne couvre pas l'installation de Home Assistant OS, décrite dans la procédure **Installer Home Assistant OS**.
 
@@ -97,11 +97,11 @@ Redémarrer les services si nécessaire.
 
 # 7. Configuration appliquée
 
-Paramètres spécifiques à RPI-ZWave :
+Paramètres spécifiques à ZWAVE-01 :
 
 | Paramètre | Valeur |
 |-----------|--------|
-| Identifiant | RPI-02 |
+| Identifiant | ZWAVE-01 |
 | Rôle | Hébergement de Z-Wave JS UI |
 | Contrôleur | RaZberry |
 

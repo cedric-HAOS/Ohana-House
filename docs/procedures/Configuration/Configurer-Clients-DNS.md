@@ -65,7 +65,7 @@ Les éléments suivants sont nécessaires :
 
 ## Étape 1
 
-Configurer la **Freebox Pop** afin qu'elle distribue l'adresse du serveur AdGuard Home comme serveur DNS via DHCP.
+Configurer **dnsmasq sur INFRA-01** afin qu'il distribue ZWAVE-01 comme DNS principal et LINKY-01 comme DNS secondaire. Pendant une reprise temporaire avec le DHCP Freebox, appliquer les mêmes valeurs DNS.
 
 ---
 
@@ -77,13 +77,13 @@ Vérifier que **HA-01** utilise AdGuard Home pour la résolution DNS.
 
 ## Étape 3
 
-Vérifier que **RPI-Linky** utilise AdGuard Home.
+Vérifier que **LINKY-01** utilise AdGuard Home.
 
 ---
 
 ## Étape 4
 
-Vérifier que **RPI-ZWave** utilise AdGuard Home.
+Vérifier que **ZWAVE-01** utilise AdGuard Home.
 
 ---
 
@@ -103,9 +103,10 @@ Contrôler le bon fonctionnement de la résolution DNS sur les différents équi
 
 | Élément | Valeur |
 |----------|--------|
-| Serveur DNS principal | AdGuard Home |
-| Distribution DHCP | Freebox Pop |
-| Clients DNS | HA-01, RPI-Linky, RPI-ZWave et équipements du réseau |
+| Serveur DNS principal | ZWAVE-01 — AdGuard Home |
+| Serveur DNS secondaire | LINKY-01 — AdGuard Home |
+| Distribution DHCP | INFRA-01 — dnsmasq |
+| Clients DNS | HA-01, LINKY-01, ZWAVE-01 et équipements du réseau |
 
 ---
 
@@ -113,10 +114,10 @@ Contrôler le bon fonctionnement de la résolution DNS sur les différents équi
 
 Vérifier les points suivants :
 
-- [ ] La Freebox distribue le serveur DNS attendu.
+- [ ] INFRA-01 distribue les deux serveurs DNS attendus.
 - [ ] HA-01 résout correctement les noms de domaine.
-- [ ] RPI-Linky résout correctement les noms de domaine.
-- [ ] RPI-ZWave résout correctement les noms de domaine.
+- [ ] LINKY-01 résout correctement les noms de domaine.
+- [ ] ZWAVE-01 résout correctement les noms de domaine.
 - [ ] Les requêtes DNS apparaissent dans les journaux d'AdGuard Home.
 - [ ] Le filtrage DNS est opérationnel.
 
@@ -126,7 +127,7 @@ Vérifier les points suivants :
 
 En cas d'échec :
 
-- vérifier la configuration DHCP de la Freebox ;
+- vérifier la configuration DHCP de dnsmasq sur INFRA-01 ;
 - vérifier l'adresse IP du serveur AdGuard Home ;
 - renouveler les baux DHCP des équipements ;
 - contrôler les journaux AdGuard Home ;

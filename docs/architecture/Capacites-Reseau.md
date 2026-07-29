@@ -40,8 +40,8 @@ Les équipements domotiques sont connectés en Gigabit Ethernet.
 | SW-03 | 5 × 1 Gb | 5 Gb/s cumulés |
 | AP-01 | Ethernet | 1 Gb/s |
 | HA-01 | Ethernet | 1 Gb/s |
-| RPI-02 | Ethernet | 1 Gb/s |
-| RPI-01 | Wi-Fi 802.11ac | Selon la qualité radio |
+| ZWAVE-01 | Ethernet | 1 Gb/s |
+| LINKY-01 | Wi-Fi 802.11ac | Selon la qualité radio |
 
 ---
 

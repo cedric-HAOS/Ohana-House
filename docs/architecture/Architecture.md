@@ -104,8 +104,8 @@ Elle héberge les différents services nécessaires au fonctionnement de la mais
 Équipements concernés :
 
 - HA-01
-- RPI-01
-- RPI-02
+- LINKY-01
+- ZWAVE-01
 
 Diagramme associé :
 
@@ -152,8 +152,8 @@ Les diagrammes constituent la référence de fonctionnement des différents flux
 | SW-03 | Distribution du réseau domotique |
 | AP-01 | Couverture Wi-Fi |
 | HA-01 | Instance Home Assistant principale |
-| RPI-01 | Acquisition de la téléinformation Linky |
-| RPI-02 | Gestion du réseau Z-Wave |
+| LINKY-01 | Acquisition de la téléinformation Linky |
+| ZWAVE-01 | Gestion du réseau Z-Wave |
 
 Chaque composant possède une responsabilité clairement définie.
 
@@ -168,9 +168,9 @@ Les principales dépendances de l'infrastructure sont les suivantes.
 | Composant | Dépend de |
 |------------|-----------|
 | HA-01 | Mosquitto |
-| HA-01 | RPI-02 (Z-Wave JS UI) |
-| RPI-01 | Réseau Wi-Fi |
-| RPI-02 | Réseau Ethernet |
+| HA-01 | ZWAVE-01 (Z-Wave JS UI) |
+| LINKY-01 | Réseau Wi-Fi |
+| ZWAVE-01 | Réseau Ethernet |
 | Tous les équipements | BOX-01 |
 
 Le détail des dépendances est documenté dans les chapitres spécifiques.

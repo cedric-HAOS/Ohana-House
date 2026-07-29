@@ -1,18 +1,23 @@
 flowchart TD
     CLIENT["Clients réseau"]
-    FREEBOX["BOX-01<br/>Freebox Pop<br/>DHCP"]
-    ADG1["RPI-01<br/>AdGuard Home"]
-    ADG2["RPI-02<br/>AdGuard Home"]
+    INFRA["INFRA-01<br/>DHCP / NTP"]
+    ZWAVE["ZWAVE-01<br/>DNS principal"]
+    LINKY["LINKY-01<br/>DNS secondaire"]
     DNS_PUBLIC["DNS publics"]
+    BOX["BOX-01<br/>Freebox Pop<br/>Passerelle Internet / WireGuard"]
     MOBILE["Smartphone / PC distant"]
-    WG["WireGuard<br/>Freebox Pop"]
     LAN["Réseau local"]
 
-    FREEBOX -- "Distribue DNS1 / DNS2" --> CLIENT
-    CLIENT -- "DNS 53" --> ADG1
-    CLIENT -- "DNS 53" --> ADG2
-    ADG1 --> DNS_PUBLIC
-    ADG2 --> DNS_PUBLIC
+    INFRA -- "Distribue via DHCP<br/>IP + passerelle BOX-01<br/>DNS1 = ZWAVE-01<br/>DNS2 = LINKY-01<br/>NTP = INFRA-01" --> CLIENT
 
-    MOBILE -- "VPN WireGuard" --> WG
-    WG --> LAN
+    CLIENT -- "DNS 53<br/>primaire" --> ZWAVE
+    CLIENT -- "DNS 53<br/>secondaire" --> LINKY
+
+    ZWAVE -- "Requêtes DNS externes" --> BOX
+    LINKY -- "Requêtes DNS externes" --> BOX
+    BOX --> DNS_PUBLIC
+
+    ZWAVE <-. "Synchronisation DNS" .-> LINKY
+
+    MOBILE -- "VPN WireGuard" --> BOX
+    BOX --> LAN

@@ -28,7 +28,7 @@ Deux instances sont utilisées afin d'améliorer la disponibilité du service.
 | Catégorie | Service réseau |
 | Fonction principale | DNS et filtrage DNS |
 | Instances | 2 |
-| Hébergement | RPI-01 (Raspberry Pi Linky) et RPI-02 (Raspberry Pi Z-Wave) |
+| Hébergement | LINKY-01 (Raspberry Pi Linky) et ZWAVE-01 (Raspberry Pi Z-Wave) |
 | Criticité | Haute |
 | Supervision | Home Assistant |
 | Sauvegarde | Oui |
@@ -64,12 +64,12 @@ L'infrastructure repose sur deux instances indépendantes.
 
 | Instance | Hébergement | État |
 |-----------|-------------|------|
-| AGH-01 | RPI-01 | Active |
-| AGH-02 | RPI-02 | Active |
+| AGH-01 — principal | ZWAVE-01 | Active |
+| AGH-02 — secondaire | LINKY-01 | Active |
 
 Les deux serveurs utilisent une configuration identique.
 
-La synchronisation de leur configuration est réalisée via Git.
+ZWAVE-01 constitue la source de vérité. La configuration est répliquée vers LINKY-01 par le mécanisme de synchronisation documenté pour INFRA-01.
 
 ---
 

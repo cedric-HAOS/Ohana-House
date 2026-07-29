@@ -10,7 +10,7 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la reconstruction complète de l'instance **RPI-Linky** après une perte totale ou un remplacement du Raspberry Pi.
+> Cette procédure décrit la reconstruction complète de l'instance **LINKY-01** après une perte totale ou un remplacement du Raspberry Pi.
 >
 > La restauration est réalisée en appliquant les procédures d'installation et de configuration de référence d'Ohana-House.
 
@@ -18,7 +18,7 @@
 
 # 1. Objectif
 
-Remettre en service l'instance **RPI-Linky** afin de rétablir la collecte de la téléinformation Linky et la publication des données vers le broker MQTT.
+Remettre en service l'instance **LINKY-01** afin de rétablir la collecte de la téléinformation Linky et la publication des données vers le broker MQTT.
 
 ---
 

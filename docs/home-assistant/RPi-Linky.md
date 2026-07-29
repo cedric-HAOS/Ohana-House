@@ -24,7 +24,7 @@ Le choix d'une machine dédiée permet d'isoler cette fonction critique de la pl
 
 | Élément | Valeur |
 |---------|--------|
-| Identifiant | RPI-01 |
+| Identifiant | LINKY-01 |
 | Nom | Raspberry Pi Linky |
 | Fabricant | Raspberry Pi Foundation |
 | Catégorie | Serveur de collecte |
@@ -42,13 +42,13 @@ Le choix d'une machine dédiée permet d'isoler cette fonction critique de la pl
 
 | Amont | Composant | Aval |
 |--------|-----------|------|
-| Compteur Linky | RPI-01 | Mosquitto |
+| Compteur Linky | LINKY-01 | Mosquitto |
 
 ---
 
 # 4. Responsabilités
 
-RPI-01 assure les fonctions suivantes :
+LINKY-01 assure les fonctions suivantes :
 
 - acquisition des données de téléinformation ;
 - traitement des trames reçues ;
@@ -77,7 +77,7 @@ Les paramètres détaillés de publication MQTT sont documentés dans la configu
 
 # 6. Dépendances
 
-RPI-01 dépend :
+LINKY-01 dépend :
 
 - de l'alimentation électrique ;
 - du réseau Wi-Fi ;
@@ -86,7 +86,7 @@ RPI-01 dépend :
 
 Une indisponibilité de Mosquitto empêche la publication des données.
 
-Une indisponibilité de HA-01 n'empêche pas RPI-01 d'acquérir les données, mais celles-ci ne sont plus exploitées.
+Une indisponibilité de HA-01 n'empêche pas LINKY-01 d'acquérir les données, mais celles-ci ne sont plus exploitées.
 
 ---
 
@@ -99,7 +99,7 @@ Une indisponibilité de HA-01 n'empêche pas RPI-01 d'acquérir les données, ma
 | Fonctionnement global | Partiel |
 | Redondance | Aucune |
 
-Une panne de RPI-01 entraîne l'arrêt de la remontée des informations de consommation électrique.
+Une panne de LINKY-01 entraîne l'arrêt de la remontée des informations de consommation électrique.
 
 ---
 
@@ -163,6 +163,6 @@ Les évolutions actuellement identifiées sont :
 
 ---
 
-Le présent document décrit la configuration de référence de RPI-01.
+Le présent document décrit la configuration de référence de LINKY-01.
 
 Toute modification importante devra être reportée dans cette documentation avant sa mise en production.

@@ -43,10 +43,13 @@ Le personnage choisi représente symboliquement la nature de cette évolution.
 
 | Version | Nom | Statut | Description |
 |---------|------|--------|-------------|
-| 0.1 | Iruka | Terminée | Initialisation du projet et rédaction de la documentation d'architecture. |
-| 0.5 | Kakashi | Terminée | Documentation complète de l'infrastructure. |
-| 1.0 | Naruto | Stable | Première version stable du dossier d'exploitation. |
-| 2.0 | Hashirama | En développement | Deuxième génération de l'infrastructure. |
+| 0.1 | Iruka | En cours | Initialisation du projet et rédaction de la documentation d'architecture. |
+| 0.5 | Kakashi | Prévu | Documentation complète de l'infrastructure. |
+| 1.0 | Naruto | Prévu | Première version stable du dossier d'exploitation. |
+| 1.1 | Yamato | Prévu | Migration vers Home Assistant Connect ZWAVE-2. |
+| 1.2 | Shikamaru | Prévu | Optimisations de l'infrastructure. |
+| 1.3 | Tsunade | Prévu | Renforcement de la résilience et des procédures. |
+| 2.0 | Hashirama | Prévu | Deuxième génération de l'infrastructure. |
 
 ---
 

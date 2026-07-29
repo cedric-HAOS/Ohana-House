@@ -1,19 +1,32 @@
 flowchart TD
     Internet((Internet))
-    BOX["BOX-01<br/>Freebox Pop"]
-    SW1["SW-01<br/>TRENDnet TEG-S762"]
-    SW2["SW-02<br/>TRENDnet TEG-S762"]
+
+    BOX["BOX-01<br/>Freebox Pop<br/>Modem / Routeur / NAT / WireGuard"]
+
+    SW1["SW-01<br/>TRENDnet TEG-S762<br/>2 x 10 Gb / 4 x 2.5 Gb"]
+    SW2["SW-02<br/>TRENDnet TEG-S762<br/>2 x 10 Gb / 4 x 2.5 Gb"]
     SW3["SW-03<br/>Linksys 5 ports 1 Gb"]
-    AP["AP-01<br/>Linksys LAPAC1750"]
-    HA["HA-01<br/>Home Assistant Green"]
-    RPI_LINKY["RPI-01<br/>Raspberry Pi Linky"]
-    RPI_ZWAVE["RPI-02<br/>Raspberry Pi Z-Wave"]
+
+    AP["AP-01<br/>Linksys LAPAC1750<br/>Point d'accès Wi-Fi"]
+
+    HA["HA-01<br/>Home Assistant Green<br/>Ethernet"]
+
+    INFRA["INFRA-01<br/>Raspberry Pi 3<br/>Infrastructure réseau<br/>DHCP / NTP / Supervision"]
+
+    LINKY["LINKY-01<br/>Raspberry Pi Linky<br/>Wi-Fi<br/>Téléinformation / DNS secondaire"]
+
+    ZWAVE["ZWAVE-01<br/>Raspberry Pi Z-Wave<br/>Ethernet<br/>Z-Wave / DNS principal"]
 
     Internet --> BOX
     BOX -- "2.5 Gb" --> SW1
+
     SW1 -- "10 Gb" --> SW2
     SW2 -- "1 Gb" --> SW3
+
     SW1 -- "1 Gb" --> AP
-    AP -. "Wi-Fi" .-> RPI_LINKY
+    SW1 -- "1 Gb" --> INFRA
+
+    AP -. "Wi-Fi" .-> LINKY
+
     SW3 -- "1 Gb" --> HA
-    SW3 -- "1 Gb" --> RPI_ZWAVE
+    SW3 -- "1 Gb" --> ZWAVE

@@ -10,7 +10,7 @@
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la configuration de l'instance **RPI-Linky** après l'installation de Home Assistant OS.
+> Cette procédure décrit la configuration de l'instance **LINKY-01** après l'installation de Home Assistant OS.
 >
 > Elle ne couvre pas l'installation de Home Assistant OS, décrite dans la procédure **Installer Home Assistant OS**.
 
@@ -103,11 +103,11 @@ Redémarrer l'instance Home Assistant.
 
 # 7. Configuration appliquée
 
-Paramètres spécifiques à RPI-Linky :
+Paramètres spécifiques à LINKY-01 :
 
 | Paramètre | Valeur |
 |-----------|--------|
-| Identifiant | RPI-01 |
+| Identifiant | LINKY-01 |
 | Rôle | Collecte de la téléinformation |
 | Téléinformation | Activée |
 | Port série | À compléter |
