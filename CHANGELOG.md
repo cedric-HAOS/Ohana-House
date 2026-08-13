@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.1.0] - 2026-08-13
+
+### Ajouté
+
+- procédures de sauvegarde logique et de restauration d'INFRA-01 avec
+  Ohana-Agent, Vision et Ohana-Installer ;
+- conservation de la clé privée `age` hors d'INFRA-01 ;
+- rétention iCloud sûre, désactivée par défaut ;
+- restauration DHCP inactive jusqu'à confirmation de l'arrêt de l'ancien
+  serveur DHCP.
+
+### Modifié
+
+- l'installation et la configuration de dnsmasq et Chrony deviennent des
+  capacités du profil INFRA-01 provisionnées par Ohana-Installer ;
+- les procédures manuelles sont conservées comme référence de diagnostic et
+  non comme parcours d'installation nominal.
+
 ## [2.0.0-Hashirama] - 2026-07-29
 
 ### Corrigé

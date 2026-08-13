@@ -8,6 +8,11 @@
 
 Configurer Chrony afin qu'il fournisse une référence temporelle à l'ensemble de l'infrastructure.
 
+Lors d'une installation neuve de Chrony, le profil `infra-01` applique cette
+configuration automatiquement et conserve la configuration de distribution
+sous le nom `chrony.conf.distribution`. Les étapes manuelles restent la
+procédure de référence et de secours.
+
 ---
 
 # Prérequis

@@ -17,6 +17,7 @@ Installer le serveur DHCP retenu par l'architecture Ohana-House.
 - Procédure Configurer-INFRA-01 terminée.
 - Connexion Internet disponible.
 - Aucune modification du DHCP de la Freebox.
+- Ohana-Installer disponible.
 
 ---
 
@@ -32,7 +33,41 @@ Cette implémentation est conforme à l'ADR-005 — Politique d'adressage IP.
 
 ---
 
-# Vérification préalable
+# Installation avec Ohana-Installer
+
+La capacité DHCP fait partie du profil `infra-01` déclaré par Ohana-Platform.
+Le parcours normal est donc :
+
+```bash
+sudo ohana install
+```
+
+Sur une installation Ohana existante :
+
+```bash
+sudo ohana update
+```
+
+L'Installer :
+
+- installe dnsmasq si nécessaire ;
+- empêche son démarrage pendant l'installation ;
+- prépare les fichiers gérés dans `/etc/dnsmasq.d/` ;
+- laisse le service arrêté et désactivé ;
+- sépare ainsi l'installation de la mise en production.
+
+Contrôler l'état avec :
+
+```bash
+sudo ohana capability status
+```
+
+# Procédure manuelle de secours
+
+Les commandes suivantes sont conservées pour une reprise lorsque
+Ohana-Installer n'est pas disponible. Elles ne constituent plus le parcours normal.
+
+## Vérification préalable
 
 S'assurer qu'aucun serveur DHCP n'est installé :
 
@@ -48,7 +83,7 @@ Aucun paquet installé
 
 ---
 
-# Installation
+## Installation
 
 Mettre à jour les dépôts :
 
@@ -64,7 +99,7 @@ sudo apt install dnsmasq -y
 
 ---
 
-# Vérification de l'installation
+## Vérification de l'installation
 
 Contrôler la version installée :
 
@@ -84,7 +119,7 @@ Cette situation est normale.
 
 ---
 
-# Désactivation temporaire
+## Désactivation temporaire
 
 Le serveur DHCP ne doit pas être utilisé avant sa configuration.
 
@@ -102,7 +137,7 @@ sudo systemctl disable dnsmasq
 
 ---
 
-# Vérifications finales
+## Vérifications finales
 
 Contrôler :
 

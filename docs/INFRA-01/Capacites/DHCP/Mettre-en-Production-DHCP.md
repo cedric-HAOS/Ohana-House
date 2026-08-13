@@ -21,7 +21,7 @@ Mettre en production le serveur DHCP d'INFRA-01 sans interruption durable du fon
 sudo dnsmasq --test
 ```
 
-- La Freebox assure toujours le DHCP.
+- L'ancien serveur assure toujours le DHCP.
 - Une sauvegarde de la configuration dnsmasq est disponible.
 
 ---
@@ -78,18 +78,26 @@ sudo dnsmasq --test
 
 # Bascule DHCP
 
-Depuis l'interface d'administration de la Freebox :
+Depuis l'interface d'administration de l'ancien serveur DHCP (box Internet,
+routeur, autre serveur ou autre machine) :
 
 - désactiver le serveur DHCP ;
 - appliquer la configuration ;
 - ne modifier aucun autre paramètre réseau.
 
-Démarrer immédiatement dnsmasq depuis la console locale d'INFRA-01 :
+Démarrer immédiatement dnsmasq avec Ohana-Installer :
 
 ```bash
-sudo systemctl start dnsmasq
-systemctl status dnsmasq
+sudo ohana capability activate dhcp
 ```
+
+L'Installer demande explicitement :
+
+```text
+L'ancien serveur DHCP a-t-il été désactivé ?
+```
+
+Il exécute `dnsmasq --test` avant d'activer et de démarrer le service.
 
 Résultat attendu :
 
@@ -97,8 +105,8 @@ Résultat attendu :
 active (running)
 ```
 
-Un seul serveur DHCP doit être actif. Si dnsmasq ne démarre pas, réactiver le
-DHCP Freebox avant de poursuivre le diagnostic.
+Un seul serveur DHCP doit être actif. Si dnsmasq ne démarre pas, réactiver
+l'ancien serveur DHCP avant de poursuivre le diagnostic.
 
 ---
 
@@ -203,10 +211,10 @@ En cas d'échec :
 Arrêter dnsmasq :
 
 ```bash
-sudo systemctl stop dnsmasq
+sudo ohana capability deactivate dhcp
 ```
 
-Depuis la Freebox :
+Depuis l'ancien serveur :
 
 - réactiver le serveur DHCP.
 

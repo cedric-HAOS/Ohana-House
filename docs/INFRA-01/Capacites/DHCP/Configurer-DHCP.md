@@ -10,12 +10,17 @@ Configurer le serveur DHCP afin qu'il soit prêt à être mis en production.
 
 À l'issue de cette procédure, la configuration est validée mais le serveur DHCP n'est pas encore actif.
 
+Dans le parcours normal, `ohana install` ou `ohana update` prépare cette
+configuration et Vision permet ensuite d'administrer les paramètres et les
+réservations. Les éditions manuelles ci-dessous servent de référence et de
+procédure de secours.
+
 ---
 
 # Prérequis
 
 - Procédure Installer-DHCP terminée.
-- La Freebox assure toujours le service DHCP.
+- L'ancien serveur assure toujours le service DHCP.
 - Aucune interruption du réseau n'est prévue.
 
 ---

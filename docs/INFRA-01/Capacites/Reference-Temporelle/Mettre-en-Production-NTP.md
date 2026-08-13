@@ -19,6 +19,15 @@ Mettre en production le serveur NTP de l'infrastructure.
 
 # Activation
 
+Le profil `infra-01` active Chrony automatiquement après validation. Pour
+réactiver explicitement la capacité après une maintenance :
+
+```bash
+sudo ohana capability activate time-reference
+```
+
+La commande de secours équivalente est :
+
 Autoriser le démarrage :
 
 ```bash
@@ -92,8 +101,7 @@ Le serveur doit continuer à distribuer une référence temporelle locale.
 En cas d'échec :
 
 ```bash
-sudo systemctl stop chrony
-sudo systemctl disable chrony
+sudo ohana capability deactivate time-reference
 ```
 
 Analyser les journaux :

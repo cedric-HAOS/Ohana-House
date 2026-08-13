@@ -17,6 +17,7 @@ Installer le serveur NTP retenu par l'architecture Ohana-House.
 - Installation d'INFRA-01 terminée.
 - Configuration d'INFRA-01 terminée.
 - Connexion Internet disponible.
+- Ohana-Installer disponible.
 
 ---
 
@@ -30,7 +31,37 @@ Installer le serveur NTP retenu par l'architecture Ohana-House.
 
 ---
 
-# Vérification préalable
+# Installation avec Ohana-Installer
+
+La référence temporelle fait partie du profil `infra-01` déclaré par
+Ohana-Platform. Le parcours normal est :
+
+```bash
+sudo ohana install
+```
+
+ou, sur une installation existante :
+
+```bash
+sudo ohana update
+```
+
+Lors d'une installation neuve de Chrony, l'Installer sauvegarde la configuration
+de distribution, applique la configuration Ohana-House, la valide avec `chronyd -p`,
+puis active le service. Une configuration Chrony locale préexistante est conservée.
+
+Contrôler l'état avec :
+
+```bash
+sudo ohana capability status
+```
+
+# Procédure manuelle de secours
+
+Les commandes ci-dessous restent disponibles si Ohana-Installer ne peut pas être
+utilisé. Elles ne constituent plus le parcours normal.
+
+## Vérification préalable
 
 Contrôler qu'aucun serveur NTP n'est installé :
 
@@ -40,7 +71,7 @@ dpkg -l | grep chrony
 
 ---
 
-# Installation
+## Installation
 
 Mettre à jour les dépôts :
 
@@ -56,7 +87,7 @@ sudo apt install chrony -y
 
 ---
 
-# Vérification
+## Vérification
 
 Contrôler :
 
@@ -72,7 +103,7 @@ systemctl status chrony
 
 ---
 
-# Désactivation temporaire
+## Désactivation temporaire
 
 Arrêter le service :
 
