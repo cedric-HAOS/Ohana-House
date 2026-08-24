@@ -14,8 +14,10 @@ domotique de référence d'Ohana.
 
 ## Présentation
 
-Ohana-House décrit l'infrastructure de la maison, ses équipements, ses services,
-ses procédures et les décisions qui encadrent son évolution.
+**Konoha** est le nom fonctionnel de l'infrastructure ou de la maison gérée par
+Ohana. **Ohana-House** reste le nom technique de ce dépôt documentaire : il
+décrit l'instance domestique de référence, ses équipements, ses services, ses
+procédures et les décisions qui encadrent son évolution.
 
 Le dépôt distingue volontairement trois niveaux :
 
@@ -32,10 +34,10 @@ capacité ou une responsabilité encore en cours de migration.
 | Projet | Rôle |
 |---|---|
 | Ohana-Platform | architecture commune et composition des releases |
-| Ohana-Agent | source de vérité opérationnelle et observations |
-| Ohana-Vision | visualisation et administration via Agent |
+| Ohana-Agent | runtime hébergeant Shikamaru et Tsunade |
+| Ohana-Vision | cockpit technique de Konoha et administration via Agent |
 | Ohana-Installer | installation et mise à jour Linux/systemd |
-| Ohana-House | déploiement domestique réel et cible |
+| Ohana-House | documentation du déploiement Konoha réel et cible |
 
 Ohana-House documente le déploiement. La configuration opérationnelle utilisée
 par Vision reste portée par Ohana-Agent.
