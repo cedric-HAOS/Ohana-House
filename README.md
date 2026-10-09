@@ -5,7 +5,7 @@
 Architecture, documentation et exploitation de l'infrastructure informatique et
 domotique de référence d'Ohana.
 
-![Version](https://img.shields.io/badge/version-v2.2.0-blue)
+![Version](https://img.shields.io/badge/version-v2.2.1-blue)
 ![Documentation](https://img.shields.io/badge/documentation-référence-green)
 ![Status](https://img.shields.io/badge/status-stable-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
@@ -14,7 +14,7 @@ domotique de référence d'Ohana.
 
 ## Présentation
 
-La release 2.2.0 prépare la reconstruction d'INFRA-01 après panne de sa carte
+La release 2.2.1 corrige le modèle de synchronisation préparé pour la reconstruction d'INFRA-01 après panne de sa carte
 SD et la réplication des noms des réservations DHCP vers les deux AdGuard.
 Voir [la procédure DNS](docs/INFRA-01/Capacites/DNS/Synchroniser-Reservations-DHCP.md).
 La publication des modèles ne constitue pas leur déploiement.

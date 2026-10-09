@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.2.1] - 2026-10-09
+
+### Corrigé
+
+- Option du service `adguardhome-sync` corrigée en `--runOnStart=true`, compatible
+  avec le binaire 0.9.3 ; l'ancienne option empêchait la réplication vers LINKY-01.
+- Modèle systemd et procédure d'installation alignés.
+
+Le cycle corrigé a réussi sur INFRA-01 le 09/10/2026 à 16:57 : 38 noms réservés
+vérifiés sur ZWAVE-01, réplication vers LINKY-01 et comparaison API réussies.
+Les deux DNS répondent `192.168.1.20` pour `ha-01.ohana.lan` selon les sorties
+fournies par l'opérateur. L'activation du timer et la recette pendant une panne
+d'INFRA-01 restent à confirmer. Agent 1.45.0 et Platform 1.0.140 sont inchangés.
+
 ## [2.2.0] - 2026-10-09
 
 ### Ajouté

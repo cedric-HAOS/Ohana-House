@@ -2,7 +2,7 @@
 
 ## Version documentaire stable
 
-**v2.2.0 — Reconstruction et réservations DNS**
+**v2.2.1 — Reconstruction et réservations DNS**
 
 L'architecture de référence, les conventions et les ADR fondateurs sont
 validés. Naruto v1.0 reste l'historique du premier dossier d'exploitation.

@@ -7,7 +7,7 @@ After=network-online.target
 Type=oneshot
 Group=ohana-agent
 ExecStart=/opt/ohana-agent/venv/bin/ohana-agent-adguard-reservations
-ExecStart=/opt/adguardhome-sync/adguardhome-sync run --config /etc/ohana-agent/adguardhome-sync.yaml --cron= --api-port=0 --run-on-start=true
+ExecStart=/opt/adguardhome-sync/adguardhome-sync run --config /etc/ohana-agent/adguardhome-sync.yaml --cron= --api-port=0 --runOnStart=true
 ExecStart=/opt/ohana-agent/venv/bin/ohana-agent-adguard-reservations --verify-replica
 TimeoutStartSec=180
 UMask=0027
