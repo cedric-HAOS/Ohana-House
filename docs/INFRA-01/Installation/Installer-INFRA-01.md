@@ -33,10 +33,10 @@ Installer le système d'exploitation constituant le socle d'INFRA-01.
 
 | Élément | Valeur |
 |----------|---------|
-| Distribution | Raspberry Pi OS Lite |
+| Distribution | Raspberry Pi OS Lite, Debian Trixie |
 | Architecture | 64 bits |
 | Interface graphique | Non |
-| Utilisateur | ohana |
+| Utilisateur | ohanna |
 | Authentification | Clé SSH uniquement |
 | Nom d'hôte | INFRA-01 |
 
@@ -52,6 +52,10 @@ Sélectionner :
 Raspberry Pi OS Lite (64-bit)
 ```
 
+Choisir Debian Trixie : Ohana exige Python 3.13 ou supérieur. Pour un remplacement,
+écrire uniquement la nouvelle carte et conserver l’ancienne sans la formater.
+Garder le DHCP de la box actif pendant la reconstruction.
+
 Puis ouvrir les options avancées.
 
 Configurer :
@@ -59,7 +63,7 @@ Configurer :
 | Paramètre | Valeur |
 |-----------|---------|
 | Hostname | infra-01 |
-| Utilisateur | ohana |
+| Utilisateur | ohanna |
 | Authentification | Clé publique SSH |
 | Activer SSH | Oui |
 | Configurer le Wi-Fi | Non |
@@ -96,13 +100,13 @@ Cette exception est nécessaire : le serveur DHCP ne doit pas dépendre de son p
 Depuis le poste d'administration :
 
 ```bash
-ssh ohana@infra-01.local
+ssh ohanna@infra-01.local
 ```
 
 ou
 
 ```bash
-ssh ohana@<adresse_IP>
+ssh ohanna@<adresse_IP>
 ```
 
 ---
@@ -158,3 +162,7 @@ Aucun service d'infrastructure n'est encore installé.
 - Configurer-INFRA-01.md
 - Architecture-Reference.md
 - ADR-003 — Services d'infrastructure (INFRA-01)
+Pour une remise en service, poursuivre avec
+[Restaurer INFRA-01](../Sauvegarde/Restaurer-INFRA-01.md) plutôt qu’une installation
+neuve Agent/Vision. Vérifier sur la console l’empreinte d’une nouvelle clé SSH
+avant de retirer l’ancienne entrée dans `known_hosts`.
