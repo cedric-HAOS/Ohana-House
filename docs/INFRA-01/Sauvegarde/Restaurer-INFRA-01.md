@@ -4,7 +4,7 @@
 
 Suivre [Installer INFRA-01](../Installation/Installer-INFRA-01.md) sur une nouvelle
 carte SD : Raspberry Pi OS Lite 64 bits, Debian Trixie, Python 3.13 ou supérieur.
-Installer Ohana-Installer **1.15.3 ou supérieur** selon le
+Installer Ohana-Installer **1.15.5 ou supérieur** selon le
 [guide officiel](https://github.com/cedric-HAOS/Ohana-Installer/blob/main/docs/Installation.md).
 Garder le DHCP de la box actif pendant la reconstruction.
 
@@ -90,3 +90,34 @@ sudo ohana capability deactivate dhcp
 ```
 
 Un seul serveur DHCP doit répondre sur le réseau.
+
+## Correctifs publiés après l'incident du 9 octobre
+
+Les évolutions suivantes sont disponibles avec Agent 1.45.1 et Installer 1.15.5
+(composition Platform 1.0.141) :
+
+- contrôle d'intégrité SQLite avant application de la base restaurée ;
+- retrait des WAL/SHM de l'installation précédente, avec sauvegarde pour retour arrière ;
+- rétablissement des propriétaires et permissions des fichiers DHCP administrables ;
+- récupération de la clé iCloud même si une installation neuve a créé une clé locale ;
+- export/import des autorisations Katsuyu et Shizune dans
+  `/etc/ohana-agent/recovery/authorizations.json`, inclus dans l'archive chiffrée.
+
+Ce dernier export contient uniquement les autorisations durables et les inscriptions
+push ; les anciens jobs et les demandes d'appairage ne sont pas réintroduits.
+Les anciennes sauvegardes sans cet export restent restaurables, mais nécessitent
+une nouvelle association des clients. Il faut déployer ces versions Agent/Installer avant d'en bénéficier.
+Les anciennes archives ne gagnent pas rétroactivement les autorisations manquantes.
+
+## Vérification MQTT après restauration
+
+Contrôler la résolution de `ha-01.ohana.lan` depuis INFRA-01 et la disponibilité
+du broker MQTT. La réservation actuelle de HA-01 est `192.168.1.20`. Si les DNS
+locaux ne publient pas ce nom, une entrée locale explicite dans `/etc/hosts`
+peut assurer la résolution, à condition de confirmer l'IP dans les réservations.
+Sur une image gérée par cloud-init, utiliser `manage_etc_hosts: false` dans un
+fichier sous `/etc/cloud/cloud.cfg.d` pour préserver cette entrée.
+
+Cette configuration système ne fait pas partie de l'archive INFRA-01 actuelle.
+Une connexion MQTT authentifiée et le topic ciblé `ohana/status` doivent confirmer
+Agent en ligne ; l'absence d'erreurs de résolution dans les logs ne suffit pas.
