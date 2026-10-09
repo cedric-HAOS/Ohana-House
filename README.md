@@ -5,7 +5,7 @@
 Architecture, documentation et exploitation de l'infrastructure informatique et
 domotique de référence d'Ohana.
 
-![Version](https://img.shields.io/badge/version-v2.0%20Hashirama-blue)
+![Version](https://img.shields.io/badge/version-v2.2.0-blue)
 ![Documentation](https://img.shields.io/badge/documentation-référence-green)
 ![Status](https://img.shields.io/badge/status-stable-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey)
@@ -13,6 +13,11 @@ domotique de référence d'Ohana.
 </div>
 
 ## Présentation
+
+La release 2.2.0 prépare la reconstruction d'INFRA-01 après panne de sa carte
+SD et la réplication des noms des réservations DHCP vers les deux AdGuard.
+Voir [la procédure DNS](docs/INFRA-01/Capacites/DNS/Synchroniser-Reservations-DHCP.md).
+La publication des modèles ne constitue pas leur déploiement.
 
 **Konoha** est le nom fonctionnel de l'infrastructure ou de la maison gérée par
 Ohana. **Ohana-House** reste le nom technique de ce dépôt documentaire : il

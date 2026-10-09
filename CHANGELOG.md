@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.2.0] - 2026-10-09
+
+### Ajouté
+
+- Réplication des noms des seules réservations DHCP INFRA-01 vers AdGuard Home
+  sur ZWAVE-01, puis copie vers LINKY-01 par `adguardhome-sync`.
+- Modèles de configuration, service et timer systemd ; vérification des règles
+  par API, procédure de recette DNS et retour arrière.
+- Parcours de reconstruction après panne de carte SD : restaurer les versions
+  sauvegardées, mettre à jour vers Platform 1.0.140 / Agent 1.45.0, puis installer
+  et activer explicitement le cycle DNS.
+
+### Modifié
+
+- Configuration et registre DNS sous `/etc/ohana-agent` pour leur inclusion
+  dans les prochaines sauvegardes chiffrées. Les anciennes archives ne sont
+  ni modifiées ni rendues incompatibles.
+- État d'INFRA-01 indiqué indisponible selon le signalement du 09/10/2026.
+- ESP-03 reste le futur DHCP de secours, avec conservation des températures
+  piscine ; aucune configuration ESPHome n'est modifiée dans cette release.
+
+Cette release publie la préparation et la documentation ; la reconstruction
+et la validation en production restent à réaliser.
+
 ## [2.1.0] - 2026-08-13
 
 ### Ajouté

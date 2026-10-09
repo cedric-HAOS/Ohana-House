@@ -136,13 +136,13 @@ La version installée doit être affichée.
 Créer le futur fichier de configuration :
 
 ```bash
-touch adguardhome-sync.yaml
+sudo touch /etc/ohana-agent/adguardhome-sync.yaml
 ```
 
 Créer une sauvegarde initiale :
 
 ```bash
-cp adguardhome-sync.yaml adguardhome-sync.yaml.orig
+sudo cp /etc/ohana-agent/adguardhome-sync.yaml /etc/ohana-agent/adguardhome-sync.yaml.orig
 ```
 
 La configuration sera réalisée dans :
@@ -165,24 +165,26 @@ Contenu :
 
 ```ini
 [Unit]
-Description=AdGuardHome Sync
-After=network.target
+Description=Ohana DHCP reservations and AdGuard Home replication
+Wants=network-online.target
+After=network-online.target
 
 [Service]
-Type=simple
+Type=oneshot
+Group=ohana-agent
+ExecStart=/opt/ohana-agent/venv/bin/ohana-agent-adguard-reservations
+ExecStart=/opt/adguardhome-sync/adguardhome-sync run --config /etc/ohana-agent/adguardhome-sync.yaml --cron= --api-port=0 --run-on-start=true
+ExecStart=/opt/ohana-agent/venv/bin/ohana-agent-adguard-reservations --verify-replica
+TimeoutStartSec=180
+UMask=0027
 
-WorkingDirectory=/opt/adguardhome-sync
-
-ExecStart=/opt/adguardhome-sync/adguardhome-sync \
-    run \
-    --config /opt/adguardhome-sync/adguardhome-sync.yaml
-
-Restart=always
-RestartSec=30
-
-[Install]
-WantedBy=multi-user.target
 ```
+
+Installer également `adguardhome-sync.timer` depuis `config/adguardhome-sync/`.
+La commande Agent et le parcours complet sont décrits dans
+[Synchroniser-Reservations-DHCP.md](Synchroniser-Reservations-DHCP.md).
+Ohana-Agent doit être installé et `/etc/ohana-agent` doit exister.
+
 
 ---
 
@@ -201,7 +203,7 @@ Le service ne doit pas encore être démarré.
 Vérifier :
 
 ```bash
-systemctl is-enabled adguardhome-sync
+systemctl is-enabled adguardhome-sync.timer
 ```
 
 Résultat attendu :
@@ -213,7 +215,7 @@ disabled
 Si nécessaire :
 
 ```bash
-sudo systemctl disable adguardhome-sync
+sudo systemctl disable adguardhome-sync.timer
 ```
 
 ---

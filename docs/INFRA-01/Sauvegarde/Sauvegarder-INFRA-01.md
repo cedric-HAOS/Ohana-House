@@ -23,6 +23,13 @@ chiffre l'archive dans la RAM (`tmpfs`), l'envoie à iCloud, puis publie son
 manifeste de restauration en dernier. Aucune image complète de la carte SD n'est
 nécessaire : le système et les logiciels sont reconstruits par Ohana-Installer.
 
+Pour le cycle DNS avec réservations DHCP, la configuration
+`/etc/ohana-agent/adguardhome-sync.yaml` et le registre
+`/etc/ohana-agent/adguard-reservations-state.json` sont inclus dans ce périmètre.
+Les anciennes sauvegardes antérieures à leur création ne les contiennent pas.
+Les unités systemd sont réinstallées depuis les modèles d'Ohana-House ; voir
+[Synchroniser-Reservations-DHCP.md](../Capacites/DNS/Synchroniser-Reservations-DHCP.md).
+
 La sauvegarde peut être lancée selon l'horaire configuré ou immédiatement depuis
 la fiche de l'équipement `infra-01` dans Vision.
 

@@ -1,0 +1,28 @@
+# systemd schedules the complete cycle; no internal daemon or API listener.
+cron: ""
+runOnStart: true
+api:
+  port: 0
+origin:
+  url: http://192.168.1.11
+  username: admin
+  password: <mot-de-passe-ZWAVE-01>
+replica:
+  url: http://192.168.1.12
+  username: admin
+  password: <mot-de-passe-LINKY-01>
+features:
+  dns:
+    accessLists: true
+    serverConfig: true
+    rewrites: true
+  dhcp:
+    serverConfig: false
+    staticLeases: false
+  generalSettings: true
+  clientSettings: true
+  services: true
+  filters:
+    blacklist: true
+    whitelist: true
+    userRules: true

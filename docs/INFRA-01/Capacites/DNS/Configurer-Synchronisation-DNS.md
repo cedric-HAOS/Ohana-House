@@ -38,7 +38,7 @@ Configurer **adguardhome-sync** afin de synchroniser automatiquement la configur
 Éditer :
 
 ```bash
-sudo nano /opt/adguardhome-sync/adguardhome-sync.yaml
+sudo nano /etc/ohana-agent/adguardhome-sync.yaml
 ```
 
 ---
@@ -48,8 +48,10 @@ sudo nano /opt/adguardhome-sync/adguardhome-sync.yaml
 Adapter les paramètres suivants :
 
 ```yaml
-cron: "*/5 * * * *"
+cron: ""
 runOnStart: true
+api:
+  port: 0
 
 origin:
   url: http://192.168.1.11
@@ -89,7 +91,8 @@ Ils ne sont volontairement pas documentés dans Ohana-House.
 Limiter les droits du fichier :
 
 ```bash
-sudo chmod 600 /opt/adguardhome-sync/adguardhome-sync.yaml
+sudo chown root:ohana-agent /etc/ohana-agent/adguardhome-sync.yaml
+sudo chmod 640 /etc/ohana-agent/adguardhome-sync.yaml
 ```
 
 Contrôler :
@@ -98,7 +101,8 @@ Contrôler :
 ls -l /opt/adguardhome-sync
 ```
 
-Le fichier de configuration ne doit être lisible que par l'administrateur.
+Le fichier est lisible par root et le groupe `ohana-agent`, nécessaire à la
+sauvegarde chiffrée iCloud ; les autres utilisateurs n'y ont pas accès.
 
 ---
 
@@ -108,7 +112,7 @@ Contrôler la validité du fichier :
 
 ```bash
 /opt/adguardhome-sync/adguardhome-sync \
-  --config /opt/adguardhome-sync/adguardhome-sync.yaml \
+  --config /etc/ohana-agent/adguardhome-sync.yaml \
   --print-config-only
 ```
 
@@ -143,3 +147,12 @@ Le service reste arrêté.
 - Installer-Synchronisation-DNS.md
 - Mettre-en-Production-Synchronisation-DNS.md
 - ADR-004 — Synchronisation des instances DNS
+## Réservations locales et planification
+
+Le cycle complet est désormais planifié par `adguardhome-sync.timer` :
+réservations DHCP INFRA-01 vers ZWAVE-01, réplication vers LINKY-01, puis
+vérification des réécritures. Les baux dynamiques sont exclus.
+Voir [Synchroniser-Reservations-DHCP.md](Synchroniser-Reservations-DHCP.md)
+pour les modèles, la protection des règles manuelles et la reconstruction.
+La configuration et le registre sous `/etc/ohana-agent` sont couverts par les
+prochaines sauvegardes iCloud.

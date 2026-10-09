@@ -1,0 +1,10 @@
+[Unit]
+Description=Synchronize Ohana reserved DNS names every five minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=5min
+Unit=adguardhome-sync.service
+
+[Install]
+WantedBy=timers.target

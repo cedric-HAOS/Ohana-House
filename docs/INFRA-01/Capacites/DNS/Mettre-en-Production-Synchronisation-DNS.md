@@ -8,7 +8,8 @@
 
 Mettre en production la synchronisation automatique de la configuration des serveurs DNS.
 
-À l'issue de cette procédure, ZWAVE-01 devient la source de vérité de la configuration DNS.
+INFRA-01 fournit les noms des réservations DHCP dans `ohana.lan`. ZWAVE-01
+reste l'origine de la configuration AdGuard Home répliquée vers LINKY-01.
 
 ---
 
@@ -43,9 +44,7 @@ ping 192.168.1.12
 Exécuter une synchronisation manuelle :
 
 ```bash
-/opt/adguardhome-sync/adguardhome-sync \
-  --config /opt/adguardhome-sync/adguardhome-sync.yaml \
-  run
+sudo systemctl start adguardhome-sync.service
 ```
 
 Vérifier qu'aucune erreur n'est signalée.
@@ -70,13 +69,13 @@ Contrôler que :
 Autoriser le démarrage automatique :
 
 ```bash
-sudo systemctl enable adguardhome-sync
+sudo systemctl enable adguardhome-sync.timer
 ```
 
 Démarrer le service :
 
 ```bash
-sudo systemctl start adguardhome-sync
+sudo systemctl start adguardhome-sync.timer
 ```
 
 ---
@@ -86,13 +85,15 @@ sudo systemctl start adguardhome-sync
 Contrôler :
 
 ```bash
-systemctl status adguardhome-sync
+systemctl status adguardhome-sync.timer
+systemctl show adguardhome-sync.service -p Result
 ```
 
 Résultat attendu :
 
 ```text
-active (running)
+Timer : active (waiting)
+Dernier cycle du service : Result=success
 ```
 
 ---
@@ -114,13 +115,13 @@ En cas d'échec :
 Arrêter le service :
 
 ```bash
-sudo systemctl stop adguardhome-sync
+sudo systemctl stop adguardhome-sync.timer adguardhome-sync.service
 ```
 
 Désactiver le démarrage automatique :
 
 ```bash
-sudo systemctl disable adguardhome-sync
+sudo systemctl disable adguardhome-sync.timer
 ```
 
 Corriger la configuration avant toute nouvelle tentative.
@@ -142,3 +143,6 @@ Corriger la configuration avant toute nouvelle tentative.
 - Installer-Synchronisation-DNS.md
 - Configurer-Synchronisation-DNS.md
 - ADR-004 — Synchronisation des instances DNS
+
+Le parcours complet et les requêtes DNS de validation figurent dans
+[Synchroniser-Reservations-DHCP.md](Synchroniser-Reservations-DHCP.md).

@@ -1,11 +1,26 @@
 # État actuel de l'infrastructure
 
-Dernière consolidation : 29 juillet 2026.
+Dernière mise à jour : 9 octobre 2026.
+
+## Incident INFRA-01 et choix confirmés
+
+La carte SD d'INFRA-01 est signalée HS ; sa sauvegarde est disponible dans le
+cloud selon l'opérateur. Le contenu de l'archive n'a pas été inspecté ici.
+La reconstruction et les contrôles des services restent à effectuer.
+
+- INFRA-01 conserve le rôle de DHCP principal et de référence pour `ohana.lan`.
+- LINKY-01 et ZWAVE-01 hébergent AdGuard Home ; leur service de synchronisation
+  sera réinstallé sur INFRA-01, complété par les seuls noms réservés DHCP.
+- ESP-03 est le futur DHCP de secours ESPHome et conserve les températures piscine.
+
+Agent 1.45.0 et les modèles House 2.2.0 préparent cette évolution ; elle n'est pas
+encore déployée. Les adresses effectives des AdGuard doivent être vérifiées :
+la table ci-dessous est un instantané du 29 juillet, pas une nouvelle mesure.
 
 Ce document sépare les éléments déjà déployés de la cible Hashirama. Il ne
 remplace pas la configuration opérationnelle d'Ohana-Agent.
 
-## Déployé
+## Dernier inventaire documenté — 29 juillet 2026
 
 | Identifiant | Équipement | Adresse actuelle | Rôle principal |
 |---|---|---:|---|
