@@ -1,11 +1,12 @@
-# Bienvenue
+# Commencer avec Ohana-House
 
-Si vous découvrez ce dépôt pour la première fois, commencez ici.
+1. Lire [la présentation](README.md) et [le standard documentaire](docs/standards/Documentation.md).
+2. Consulter [l'état documenté et ses limites](Etat-Actuel.md).
+3. Choisir [le guide de reconstruction](Guide-de-Reconstruction.md) pour une
+   perte totale, ou [la restauration INFRA-01](docs/INFRA-01/Sauvegarde/Restaurer-INFRA-01.md)
+   pour une panne de ce serveur.
+4. Préparer [la validation finale](Validation-Finale.md) et suivre
+   [les contrôles restants](ROADMAP.md).
 
-## Lecture recommandée
-
-1. README.md
-2. Documentation.md
-3. Guide-de-Reconstruction.md
-
-Les procédures et documents d'exploitation pourront ensuite être consultés selon les besoins.
+Les adresses cibles et les versions disponibles ne constituent pas une preuve
+de déploiement. Dater les observations opérationnelles avant de les déclarer acquises.

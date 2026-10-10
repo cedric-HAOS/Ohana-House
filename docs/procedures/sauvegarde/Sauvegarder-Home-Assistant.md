@@ -6,19 +6,25 @@
 | Procédure | Sauvegarder Home Assistant |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
-| Dernière mise à jour | 04/07/2026 |
+| Dernière mise à jour | 10/10/2026 |
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la création d'une sauvegarde de l'instance Home Assistant Green.
+> Cette procédure décrit la sauvegarde d'une instance HAOS : HA-01, LINKY-01 ou ZWAVE-01.
 >
-> Cette sauvegarde inclut Home Assistant ainsi que les modules complémentaires installés (notamment Mosquitto et AdGuard Home).
+> Choisir une sauvegarde complète et vérifier les add-ons inclus sur la cible. Une archive HA-01 ne remplace pas celle des deux autres HAOS.
 
 ---
 
 # 1. Objectif
 
-Créer une sauvegarde complète de Home Assistant afin de permettre la restauration de l'infrastructure en cas d'incident.
+Créer une sauvegarde complète de l'instance HAOS choisie, incluant les
+add-ons requis et leurs configurations. Sur HA-01, cela inclut Mosquitto ;
+sur LINKY-01 et ZWAVE-01, cela inclut notamment leur AdGuard. Répéter la
+procédure sur chaque instance, sans confondre leurs archives. Vérifier
+l'identifiant, la date, le périmètre sélectionné et la clé de déchiffrement
+avant de considérer l'archive comme utilisable. Le parcours iCloud Ohana
+est décrit dans [le guide Platform](https://github.com/cedric-HAOS/Ohana-Platform/blob/main/docs/Guides/Sauvegarder-HAOS-vers-iCloud.md).
 
 ---
 
@@ -118,6 +124,8 @@ Vérifier que le fichier téléchargé est lisible et correctement stocké.
 - [ ] Téléchargement effectué.
 - [ ] Taille du fichier cohérente.
 - [ ] Fichier stocké sur un support externe.
+- [ ] Instance, date et add-ons inclus identifiés.
+- [ ] Clé de déchiffrement conservée indépendamment de la cible.
 
 ---
 
@@ -133,6 +141,6 @@ En cas d'échec :
 
 # 10. Documents associés
 
-- Home-Assistant-Green.md
-- Installer-Home-Assistant-Green.md
-- Restaurer-Home-Assistant.md *(à rédiger)*
+- [Home Assistant Green](../../home-assistant/Home-Assistant-Green.md)
+- [Installer Green](../installation/Installer-Home-Assistant-Green.md)
+- [Restaurer Home Assistant](../restauration/Restaurer-Home-Assistant.md)

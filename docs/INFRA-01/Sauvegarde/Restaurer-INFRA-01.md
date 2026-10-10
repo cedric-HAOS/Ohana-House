@@ -4,7 +4,7 @@
 
 Suivre [Installer INFRA-01](../Installation/Installer-INFRA-01.md) sur une nouvelle
 carte SD : Raspberry Pi OS Lite 64 bits, Debian Trixie, Python 3.13 ou supérieur.
-Installer Ohana-Installer **1.15.5 ou supérieur** selon le
+Installer Ohana-Installer **1.15.6 ou supérieur** selon le
 [guide officiel](https://github.com/cedric-HAOS/Ohana-Installer/blob/main/docs/Installation.md).
 Garder le DHCP de la box actif pendant la reconstruction.
 
@@ -22,8 +22,9 @@ sauvegarde la plus récente antérieure à la panne, vérifier sa date et ses ve
 avant confirmation. Sans `--choose-backup`, Installer sélectionne la dernière
 sauvegarde dont le manifeste est valide.
 
-Les sauvegardes sont dans `Ohana/Backups/infra-01`. Si aucune identité age locale
-n'existe, Installer récupère automatiquement `Ohana/Recovery/infra-01.agekey`.
+Les sauvegardes sont dans `Ohana/Backups/infra-01`. Installer récupère l'identité
+`Ohana/Recovery/infra-01.agekey`, même si une installation neuve a déjà créé
+une autre identité locale. Ne pas régénérer la clé d'une archive existante.
 Une clé externe peut être fournie avec `--identity /media/usb/ohana-infra-01.agekey`.
 
 Installer vérifie la taille et le SHA-256 de l'archive, la déchiffre et compare
@@ -74,6 +75,27 @@ sudo ohana capability status
 Ouvrir Vision sur `http://192.168.1.10:8000` et vérifier l'infrastructure,
 les configurations et les connexions restaurées.
 
+## Vérifier les permissions et l'accès iCloud
+
+Depuis Installer 1.15.6, la configuration privée rclone doit appartenir à
+`ohana-agent:ohana-agent` en mode `600`. Contrôler sans afficher son contenu :
+
+```bash
+sudo stat -c '%U:%G %a %n' /etc/ohana-agent/rclone.conf
+sudo -u ohana-agent test -r /etc/ohana-agent/rclone.conf
+sudo -u ohana-agent test -w /etc/ohana-agent/rclone.conf
+sudo -u ohana-agent rclone lsd \
+  --config /etc/ohana-agent/rclone.conf \
+  icloud:Ohana/Backups/infra-01
+```
+
+La première sortie doit indiquer `ohana-agent:ohana-agent 600`. Les tests de
+lecture/écriture doivent réussir et la liste distante doit être accessible.
+La lecture distante ne démontre pas un renouvellement futur de session : suivre
+l'état iCloud dans Vision et la prochaine sauvegarde effectivement publiée.
+Si la session est expirée, utiliser la reconnexion iCloud avec 2FA depuis Vision.
+Ne pas élargir les droits ni recopier les identifiants dans les journaux.
+
 ## Basculer le DHCP
 
 Après validation, désactiver le DHCP de la box, puis lancer :
@@ -108,6 +130,11 @@ push ; les anciens jobs et les demandes d'appairage ne sont pas réintroduits.
 Les anciennes sauvegardes sans cet export restent restaurables, mais nécessitent
 une nouvelle association des clients. Il faut déployer ces versions Agent/Installer avant d'en bénéficier.
 Les anciennes archives ne gagnent pas rétroactivement les autorisations manquantes.
+
+Installer 1.15.6 complète ces correctifs avec le propriétaire et le mode privés
+de `rclone.conf` : c'est le minimum retenu pour cette procédure. Après restauration,
+vérifier l'enregistrement de Katsuyu et l'accès Shizune ; une sauvegarde ancienne
+sans export d'autorisations exige une nouvelle association.
 
 ## Vérification MQTT après restauration
 

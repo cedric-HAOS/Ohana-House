@@ -288,15 +288,15 @@ Le service DHCP reste arrêté.
 - la documentation est intégrée directement dans le répertoire de configuration ;
 - aucune modification n'a encore été apportée au réseau.
 
-La mise en production sera réalisée dans **Basculer-DHCP.md**.
+La mise en production sera réalisée dans [Mettre le DHCP en production](Mettre-en-Production-DHCP.md).
 
 ---
 
 # Documents associés
 
 - Installer-DHCP.md
-- Basculer-DHCP.md
-- Sauvegarder-DHCP.md
-- Restaurer-DHCP.md
+- [Mise en production DHCP](Mettre-en-Production-DHCP.md)
+- [Sauvegarde INFRA-01, incluant DHCP](../../Sauvegarde/Sauvegarder-INFRA-01.md)
+- [Restauration INFRA-01, DHCP initialement inactif](../../Sauvegarde/Restaurer-INFRA-01.md)
 - ADR-003 — Services d'infrastructure (INFRA-01)
 - ADR-005 — Politique d'adressage IP

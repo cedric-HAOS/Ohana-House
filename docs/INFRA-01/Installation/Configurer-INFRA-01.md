@@ -226,6 +226,6 @@ Contrôler :
 - Installer-DHCP.md
 - Installer-NTP.md
 - Configurer-Synchronisation-DNS.md
-- Installer-Supervision.md
+- [Installer Agent et Vision](https://github.com/cedric-HAOS/Ohana-Platform/blob/main/docs/Installer-Ohana-Platform.md)
 - ADR-003 — Services d'infrastructure (INFRA-01)
 - ADR-007 — Politique de mise à jour de l'infrastructure

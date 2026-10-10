@@ -1,50 +1,63 @@
-# État actuel de l'infrastructure
+# État documenté de l'infrastructure
 
-Dernière mise à jour : 9 octobre 2026.
+Consolidation documentaire : 10 octobre 2026. Ce document rassemble des relevés
+datés ; il ne constitue pas une mesure en temps réel ni une nouvelle recette.
+La configuration opérationnelle reste portée par Ohana-Agent.
 
-## Incident INFRA-01 et choix confirmés
+## Reprise après l'incident du 9 octobre
 
-La carte SD d'INFRA-01 est signalée HS ; sa sauvegarde est disponible dans le
-cloud selon l'opérateur. Le contenu de l'archive n'a pas été inspecté ici.
-La reconstruction et les contrôles des services restent à effectuer.
+La carte SD d'INFRA-01 a été signalée HS le 9 octobre. Le
+[CHANGELOG 2.2.1](CHANGELOG.md) consigne ensuite un cycle DNS réussi sur INFRA-01
+à 16:57 : 38 noms réservés vérifiés sur ZWAVE-01, réplication vers LINKY-01 et
+comparaison API réussies. Les deux DNS ont répondu `192.168.1.20` pour
+`ha-01.ohana.lan`, selon les sorties de l'opérateur.
 
-- INFRA-01 conserve le rôle de DHCP principal et de référence pour `ohana.lan`.
-- LINKY-01 et ZWAVE-01 hébergent AdGuard Home ; leur service de synchronisation
-  sera réinstallé sur INFRA-01, complété par les seuls noms réservés DHCP.
-- ESP-03 est le futur DHCP de secours ESPHome et conserve les températures piscine.
+Ce relevé établit la remise en service du cycle à cet instant. Il ne suffit pas
+à certifier tous les services restaurés, l'activation du timer ni la tenue du
+cycle pendant une panne d'INFRA-01. Consigner ces contrôles dans
+[Validation finale](Validation-Finale.md) et utiliser
+[le guide de restauration](docs/INFRA-01/Sauvegarde/Restaurer-INFRA-01.md).
 
-Agent 1.45.0 et les modèles House 2.2.0 préparent cette évolution ; elle n'est pas
-encore déployée. Les adresses effectives des AdGuard doivent être vérifiées :
-la table ci-dessous est un instantané du 29 juillet, pas une nouvelle mesure.
+| Élément | Dernière preuve documentaire | Contrôle restant |
+|---|---|---|
+| INFRA-01 | Cycle DNS exécuté le 09/10 à 16:57 | Services Agent/Vision/Chrony, versions et sauvegarde après reprise à dater |
+| Réservations DNS | 38 noms comparés sur les deux AdGuard le 09/10 | Timer actif et scénario de panne à confirmer |
+| HA-01 | Réservation/réponse DNS .20 le 09/10 | Inventaire complet à actualiser |
+| DHCP principal | Validation et arrêt Freebox cochés dans la roadmap avant consolidation | Exclusivité et nouveau bail après reconstruction à consigner |
+| ESP-03 | Prototype local, non qualifié sur le matériel | Compilation/recette matérielle et activation distinctes |
 
-Ce document sépare les éléments déjà déployés de la cible Hashirama. Il ne
-remplace pas la configuration opérationnelle d'Ohana-Agent.
+INFRA-01 conserve l'autorité sur DHCP et `ohana.lan` ; ZWAVE-01 et LINKY-01
+hébergent les DNS. ESP-03 conserve ses températures piscine et reste un secours
+en préparation. Les versions de dépôts disponibles ne prouvent pas leur
+installation sur ces machines.
 
-## Dernier inventaire documenté — 29 juillet 2026
+## Inventaire historique du 29 juillet 2026
 
-| Identifiant | Équipement | Adresse actuelle | Rôle principal |
+Les adresses ci-dessous sont conservées comme historique ; ne pas les utiliser
+comme constat actuel pour préparer une intervention.
+
+| Identifiant | Équipement | Adresse relevée le 29 juillet | Rôle |
 |---|---|---:|---|
-| BOX-01 | Freebox Pop | 192.168.1.1 | passerelle Internet et WireGuard |
-| INFRA-01 | serveur Debian | 192.168.1.10 | services d'infrastructure et Ohana |
-| LINKY-01 | Raspberry Pi Linky | 192.168.1.53 | téléinformation MQTT |
-| ZWAVE-01 | Raspberry Pi Z-Wave | 192.168.1.54 | Z-Wave JS UI |
-| AP-01 | Linksys LAPAC1750 | 192.168.1.99 | accès Wi-Fi |
+| BOX-01 | Freebox Pop | 192.168.1.1 | Internet et WireGuard |
+| INFRA-01 | serveur Debian | 192.168.1.10 | Infrastructure et Ohana |
+| LINKY-01 | Raspberry Pi Linky | 192.168.1.53 | Téléinformation |
+| ZWAVE-01 | Raspberry Pi Z-Wave | 192.168.1.54 | Z-Wave |
+| AP-01 | Linksys LAPAC1750 | 192.168.1.99 | Wi-Fi |
 | HA-01 | Home Assistant Green | 192.168.1.247 | Home Assistant et Mosquitto |
-| DHCP | dnsmasq préparé sur INFRA-01 ; bascule finale à valider | INFRA-01, plage `.100-.199` |
-| NTP | prévu sur INFRA-01 | INFRA-01 |
-| DNS | services AdGuard sur les Raspberry Pi | ZWAVE-01 principal, LINKY-01 secondaire |
-| WireGuard | terminaison Freebox | BOX-01 |
-| Supervision | Agent et Vision installables | Agent source de vérité, Vision projection |
 
-Le réseau physique utilise SW-01 et SW-02 comme switchs TRENDnet, puis SW-03
-pour les équipements domotiques.
+Le réseau physique utilise SW-01 et SW-02 TRENDnet, puis SW-03 pour les
+équipements domotiques. Voir [l'inventaire](docs/architecture/Inventaire.md).
 
-## Adresses cibles Hashirama
+## Cible Hashirama et vérifications de terrain
 
-| Identifiant | Adresse cible |
-|---|---:|
-| BOX-01 | 192.168.1.1 |
-| INFRA-01 | 192.168.1.10 |
-| ZWAVE-01 | 192.168.1.11 |
-| LINKY-01 | 192.168.1.12 |
-| HA-01 | 192.168.1.20 |
+| Identifiant | Adresse cible | Confirmation datée disponible ici |
+|---|---:|---|
+| BOX-01 | 192.168.1.1 | Pas de nouveau relevé |
+| INFRA-01 | 192.168.1.10 | Cycle exécuté, configuration réseau à consigner |
+| ZWAVE-01 | 192.168.1.11 | AdGuard vérifié ; adresse effective à dater |
+| LINKY-01 | 192.168.1.12 | AdGuard vérifié ; adresse effective à dater |
+| HA-01 | 192.168.1.20 | Réponse DNS du 09/10 à 16:57 |
+
+Pour chaque nouveau contrôle, consigner la date Europe/Paris, les versions,
+l'adresse réellement observée, le résultat et sa source. Un nom résolu ne
+démontre pas à lui seul le bon fonctionnement de l'application.

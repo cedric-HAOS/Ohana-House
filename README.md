@@ -92,7 +92,7 @@ WireGuard.
 
 ## Version
 
-Hashirama v2.0 est la version documentaire stable. Les composants logiciels
+La version documentaire publiée est 2.2.1. Hashirama v2.0 en est la baseline architecturale. Les composants logiciels
 Ohana-Agent, Ohana-Vision et Ohana-Installer évoluent dans leurs propres dépôts
 et ne constituent plus des versions futures d'Ohana-House.
 

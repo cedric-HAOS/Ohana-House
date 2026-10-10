@@ -3,24 +3,32 @@
 La sauvegarde d'INFRA-01 est une capacité du plugin `backup` d'Ohana-Agent.
 Elle est configurable depuis **Vision → Configuration → Plugins → Sauvegardes**.
 
-## Préparer la clé de restauration
+## Identité de restauration et copie indépendante
 
-La paire de clés doit être créée et conservée sur une autre machine :
+Ohana-Installer crée l'identité existante sous
+`/etc/ohana-agent/keys/infra-01.agekey`, puis en dérive le destinataire public.
+La clé appartient à `root:ohana-agent` en mode `640`, dans un répertoire `750`.
+Agent copie cette identité dans `icloud:Ohana/Recovery/infra-01.agekey` avant
+de publier une sauvegarde. Vision réutilise le destinataire préparé ; aucune
+création manuelle de clé n'est nécessaire dans le parcours nominal.
 
-```bash
-age-keygen -o ohana-infra-01.agekey
-```
+Conserver aussi une copie de cette même identité sur un support externe protégé,
+accessible lors d'une reconstruction. Ne pas afficher son contenu ni la mettre
+dans Git. La copie doit correspondre à la clé des archives à restaurer : créer
+une nouvelle paire ne permet pas de déchiffrer les anciennes.
 
-Copier uniquement le destinataire public `age1...` dans Vision. La clé privée
-`ohana-infra-01.agekey` ne doit jamais être enregistrée sur INFRA-01 ; conserver
-au moins une copie sur un support accessible le jour d'une reconstruction.
+Lors d'une restauration iCloud, Installer récupère l'identité cloud et la
+réinstalle localement. La copie externe permet une restauration avec `--identity`
+si nécessaire ; voir [Restaurer INFRA-01](Restaurer-INFRA-01.md).
 
 ## Contenu
 
 Chaque sauvegarde contient les configurations Agent, Vision, dnsmasq et Chrony,
-ainsi qu'un instantané cohérent de la base de données Vision. Agent crée et
-chiffre l'archive dans la RAM (`tmpfs`), l'envoie à iCloud, puis publie son
-manifeste de restauration en dernier. Aucune image complète de la carte SD n'est
+ainsi qu'un instantané cohérent de la base de données Vision. Avec
+`use_katsuyu: true`, Agent produit le tar et l'instantané SQLite sur `tmpfs`, Katsuyu compresse
+et chiffre, puis Agent relaie l'artefact vers iCloud et publie son manifeste en
+dernier. Le mode local explicite compresse et chiffre sur INFRA-01.
+Aucune image complète de la carte SD n'est
 nécessaire : le système et les logiciels sont reconstruits par Ohana-Installer.
 
 Pour le cycle DNS avec réservations DHCP, la configuration
@@ -32,6 +40,19 @@ Les unités systemd sont réinstallées depuis les modèles d'Ohana-House ; voir
 
 La sauvegarde peut être lancée selon l'horaire configuré ou immédiatement depuis
 la fiche de l'équipement `infra-01` dans Vision.
+
+Depuis Agent 1.45.1, l'archive inclut aussi l'export des autorisations durables
+Katsuyu/Shizune et des inscriptions push. Les jobs et demandes d'appairage ne
+sont pas réintroduits. Les archives antérieures sans cet export restent
+restaurables mais demandent une nouvelle association des clients.
+
+## Vérifier la sauvegarde
+
+Contrôler dans Vision le résultat réel du job et la date de la sauvegarde.
+Vérifier la présence du manifeste publié en dernier, la taille et le SHA-256 de
+l'archive. Un lancement ou un job de compression réussi ne suffit pas à prouver
+la publication distante complète. Préparer périodiquement une recette isolée
+de [restauration](Restaurer-INFRA-01.md), sans remplacer le serveur en service.
 
 ## Rétention iCloud
 

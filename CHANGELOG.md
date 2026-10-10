@@ -1,5 +1,16 @@
 # Changelog
 
+## Non publié
+
+- Contrôle documentaire D01/D02 : restauration INFRA-01 avec Installer 1.15.6
+  minimum, permissions rclone et conservation de l'identité de déchiffrement
+  locale/cloud avec une copie indépendante.
+- D03/D08 : reconstruction complète intégrant INFRA-01 et Ohana, checklist
+  datée et états consolidés à partir des preuves historiques, avec les
+  vérifications post-restauration encore à recueillir.
+- D11/D15 : références remplacées par les procédures existantes, périmètre
+  HAOS explicité et séquence Téléinformation avec flux HTTP/MQTT indépendants.
+
 ## [2.2.1] - 2026-10-09
 
 ### Corrigé

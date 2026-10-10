@@ -197,4 +197,4 @@ Si nécessaire :
 
 - Configurer-Mosquitto.md *(à rédiger)*
 - Mettre-a-jour-Mosquitto.md *(à rédiger)*
-- Restaurer-Mosquitto.md *(à rédiger)*
+- [Restaurer HA-01 et Mosquitto depuis la sauvegarde HAOS](../restauration/Restaurer-Home-Assistant.md) *(à rédiger)*

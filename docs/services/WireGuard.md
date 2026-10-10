@@ -156,8 +156,8 @@ Les évolutions actuellement identifiées sont :
 
 ## Procédures
 
-- Installer-WireGuard.md
-- Restaurer-WireGuard.md
+- [Configurer WireGuard sur Freebox](../procedures/Configuration/Configurer-WireGuard-Freebox.md)
+- [Restaurer la configuration Freebox](../procedures/restauration/Restaurer-Freebox.md)
 
 ---
 

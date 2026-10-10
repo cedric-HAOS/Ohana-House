@@ -6,17 +6,19 @@
 | Procédure | Restaurer Home Assistant |
 | Version | 1.0 |
 | Niveau de qualité | 🟣 Référence |
-| Dernière mise à jour | 04/07/2026 |
+| Dernière mise à jour | 10/10/2026 |
 
 > ℹ️ **Information**
 >
-> Cette procédure décrit la restauration de HA-01 à partir d'une sauvegarde complète.
+> Cette procédure restaure l'instance HAOS identifiée dans l'archive : HA-01, LINKY-01 ou ZWAVE-01. Préserver la clé de déchiffrement et vérifier les add-ons réellement inclus.
 
 ---
 
 # 1. Objectif
 
-Restaurer l'instance Home Assistant Green après une perte totale ou une corruption de l'installation.
+Restaurer l'instance HAOS cible et les add-ons présents dans sa sauvegarde.
+Mosquitto appartient à HA-01 ; AdGuard aux instances LINKY-01/ZWAVE-01.
+Ne pas restaurer une archive d'une autre cible pour récupérer un seul service.
 
 ---
 
@@ -26,14 +28,15 @@ Utiliser cette procédure :
 
 - après une panne matérielle ;
 - après une corruption du système ;
-- après le remplacement de Home Assistant Green.
+- après le remplacement du matériel de l'instance HAOS cible.
 
 ---
 
 # 3. Prérequis
 
 - Sauvegarde Home Assistant disponible.
-- Home Assistant Green opérationnel.
+- Matériel de la cible prêt à recevoir HAOS.
+- Identité de l'archive et clé de déchiffrement vérifiées.
 - Accès administrateur.
 
 ---
@@ -60,11 +63,13 @@ Utiliser cette procédure :
 
 ## Étape 1
 
-Installer Home Assistant Green.
+Installer le matériel de la cible :
 
-Voir :
+- [Home Assistant Green pour HA-01](../installation/Installer-Home-Assistant-Green.md) ;
+- [Home Assistant OS pour LINKY-01 ou ZWAVE-01](../installation/Installer-Home-Assistant-OS.md).
 
-- Installer-Home-Assistant-Green.md
+Les parcours de reconstruction spécifiques [Linky](Restaurer-RPi-Linky.md)
+et [Z-Wave](Restaurer-RPi-ZWave.md) complètent cette restauration.
 
 ---
 
@@ -105,10 +110,11 @@ Effectuer les vérifications finales.
 # 8. Vérifications
 
 - [ ] Home Assistant accessible
-- [ ] Mosquitto opérationnel
-- [ ] AdGuard opérationnel
+- [ ] Add-ons attendus présents et configurés sur la bonne instance
+- [ ] Mosquitto fonctionnel sur HA-01, si cette instance est restaurée
+- [ ] AdGuard répond sur la cible LINKY-01/ZWAVE-01 restaurée
 - [ ] Automatisations fonctionnelles
-- [ ] Aucun message d'erreur
+- [ ] Aucun échec actuel non expliqué dans les journaux de la cible
 
 ---
 
@@ -120,6 +126,6 @@ Reprendre la restauration avec une sauvegarde valide.
 
 # 10. Documents associés
 
-- Installer-Home-Assistant-Green.md
-- Sauvegarder-Home-Assistant.md
-- Home-Assistant-Green.md
+- [Installer Green](../installation/Installer-Home-Assistant-Green.md)
+- [Sauvegarder HAOS](../sauvegarde/Sauvegarder-Home-Assistant.md)
+- [Home Assistant Green](../../home-assistant/Home-Assistant-Green.md)

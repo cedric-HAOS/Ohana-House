@@ -243,7 +243,7 @@ Analyser les journaux avant toute nouvelle tentative.
 - Configurer-INFRA-01.md
 - Installer-DHCP.md
 - Configurer-DHCP.md
-- Sauvegarder-DHCP.md
-- Restaurer-DHCP.md
+- [Sauvegarde INFRA-01, incluant DHCP](../../Sauvegarde/Sauvegarder-INFRA-01.md)
+- [Restauration INFRA-01](../../Sauvegarde/Restaurer-INFRA-01.md)
 - ADR-003 — Services d'infrastructure (INFRA-01)
 - ADR-005 — Politique d'adressage IP

@@ -1,36 +1,32 @@
-# Roadmap
+# Roadmap House
 
-## Versions documentaires
+## Version documentaire
 
-### Naruto v1.0 — historique
+Naruto v1.0 constitue l'historique du dossier d'exploitation. Hashirama v2.0 est
+la baseline d'architecture ; la version documentaire publiée est **2.2.1**.
+Les composants logiciels suivent leurs propres versions et roadmaps.
 
-Premier dossier d'exploitation : inventaire, procédures, sauvegarde,
-restauration et reconstruction.
+## Jalons historiques
 
-### Hashirama v2.0 — stable
+- [x] Validation de dnsmasq et arrêt du DHCP Freebox consignés dans la roadmap.
+- [x] Choix DNS principal ZWAVE-01 et secondaire LINKY-01.
+- [x] Décision d'adressage cible ZWAVE-01 .11, LINKY-01 .12 et HA-01 .20.
+- [x] Procédures de sauvegarde logique/restauration INFRA-01 présentes.
+- [x] Cycle DNS du 09/10 à 16:57 : 38 noms réservés et réponses HA-01 .20.
 
-- architecture de référence ;
-- modèle Mission → Capacité → Implémentation ;
-- rôle INFRA-01 ;
-- DHCP, DNS et NTP résilients ;
-- politique d'adressage ;
-- conventions de nommage ;
-- ADR-001 à ADR-007 ;
-- séparation entre état actuel et architecture cible.
+Ces jalons ne remplacent pas une recette après reconstruction. Les preuves et
+limites sont dans [Etat-Actuel.md](Etat-Actuel.md) et le [CHANGELOG](CHANGELOG.md).
 
-## Migrations effectuées
+## Contrôles à consigner après reprise
 
-- [x] valider dnsmasq sur INFRA-01 après redémarrage ;
-- [x] désactiver définitivement le DHCP Freebox après validation ;
-- [x] confirmer la stratégie DNS principale/secondaire ;
-- [x] décider de la renumérotation ZWAVE-01 `.11`, LINKY-01 `.12` et HA-01 `.20` ;
+- [ ] Dater les versions et l'état des services Agent/Vision/Chrony.
+- [ ] Vérifier un nouveau bail DHCP et l'exclusivité du serveur principal.
+- [ ] Confirmer le timer de réplication DNS et son comportement pendant une panne.
+- [ ] Vérifier permissions rclone, accès iCloud et nouvelle sauvegarde publiée.
+- [ ] Vérifier les autorisations Katsuyu/Shizune ou refaire les associations requises.
+- [ ] Actualiser l'inventaire des adresses effectives, dont les deux AdGuard.
+- [ ] Maintenir l'inventaire Shelly dans Agent et House.
+- [ ] Qualifier ESP-03 sur le matériel avant toute activation du secours.
 
-## Migrations restantes
-
-- [ ] compléter les procédures de sauvegarde et de restauration d'INFRA-01 ;
-- [ ] maintenir l'inventaire Shelly dans Agent et House.
-
-## Produits logiciels
-
-Ohana-Agent, Ohana-Vision, Ohana-Installer et Ohana-Platform disposent de leurs
-propres roadmaps. Ils ne sont pas une « v3 » d'Ohana-House.
+Utiliser [le guide de reconstruction](Guide-de-Reconstruction.md) et
+[Validation finale](Validation-Finale.md) ; conserver une preuve datée par contrôle.

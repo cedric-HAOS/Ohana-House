@@ -171,5 +171,5 @@ Si nécessaire :
 
 - Configurer-AdGuard.md *(à rédiger)*
 - Mettre-a-jour-AdGuard.md *(à rédiger)*
-- Sauvegarder-AdGuard.md *(à rédiger)*
-- Restaurer-AdGuard.md *(à rédiger)*
+- [Sauvegarder le HAOS qui héberge AdGuard](../sauvegarde/Sauvegarder-Home-Assistant.md) *(à rédiger)*
+- [Restaurer le HAOS et ses add-ons](../restauration/Restaurer-Home-Assistant.md) *(à rédiger)*

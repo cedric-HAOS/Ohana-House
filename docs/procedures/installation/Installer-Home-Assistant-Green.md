@@ -166,4 +166,4 @@ En cas de dysfonctionnement persistant, réinitialiser le Home Assistant Green c
 
 ## Procédures
 
-- Restaurer-Home-Assistant-Green.md (à rédiger)
+- [Restaurer Home Assistant Green](../restauration/Restaurer-Home-Assistant.md) (à rédiger)
