@@ -63,36 +63,23 @@ Ne pas supprimer ce fichier : les anciennes règles perdraient leur suivi.
 
 ## Installation lors de la reconstruction
 
-Après restauration, installer Ohana-Agent **1.45.0 ou ultérieur**, contenant la commande
-`/opt/ohana-agent/venv/bin/ohana-agent-adguard-reservations`, puis le binaire
-`/opt/adguardhome-sync/adguardhome-sync`. Ohana-Installer ne pose pas automatiquement
-les unités ci-dessous : les installer depuis ce dépôt.
+Depuis Installer 1.16.0 et Platform 1.0.144 (Agent 1.47.0, Vision 1.38.0),
+Installer prépare le moteur 0.9.4, son service, son timer et les permissions.
+Les configurations et unités existantes sont conservées. Les modèles présents
+ici restent une référence pour les installations historiques ; aucun ajout
+manuel d’unité ni saisie dans un fichier YAML n’est requis dans ce nouveau parcours.
 
-Depuis la racine d'Ohana-House sur INFRA-01 :
+Dans **Vision → Configuration → Plugins → Synchronisation AdGuard**, renseigner
+les accès aux deux instances, **Enregistrer et vérifier les accès**, puis
+**Activer la synchronisation**. Les champs de mot de passe vides conservent les
+secrets enregistrés. Activer séparément la surveillance pour Shizune.
+Le DHCP AdGuard reste exclu et le timer pilote le cycle complet.
 
-```bash
-sudo install -o root -g ohana-agent -m 640 config/adguardhome-sync/adguardhome-sync.example.yaml /etc/ohana-agent/adguardhome-sync.yaml
-sudo nano /etc/ohana-agent/adguardhome-sync.yaml
-sudo install -m 644 config/adguardhome-sync/adguardhome-sync.service /etc/systemd/system/adguardhome-sync.service
-sudo install -m 644 config/adguardhome-sync/adguardhome-sync.timer /etc/systemd/system/adguardhome-sync.timer
-sudo systemctl daemon-reload
-```
-
-Renseigner les deux mots de passe dans le fichier protégé. Les modèles utilisent
-les adresses cibles ZWAVE-01 `192.168.1.11` et LINKY-01 `192.168.1.12` : vérifier
-les adresses réellement déployées et adapter les URL avant activation.
-Conserver `dns.rewrites: true`,
-`dhcp.serverConfig: false` et `dhcp.staticLeases: false`. Le DHCP AdGuard n'est
-pas activé. Conserver `cron: ""` et `api.port: 0` : le timer pilote le cycle complet.
-
-La configuration et le registre sont protégés en `root:ohana-agent`, mode `0640`,
-pour permettre à l'Agent de les lire lors de la sauvegarde chiffrée. Le service
-s'exécute comme root avec le groupe primaire `ohana-agent`. Vérifier les droits
-après restauration ou transfert d'une ancienne configuration.
-
-Si une ancienne installation existe, arrêter et désactiver son service avant
-de remplacer l'unité. Transférer ses identifiants vers le nouveau fichier ;
-ne pas conserver une deuxième copie non sauvegardée sous `/opt`.
+La configuration, le registre de réconciliation et le choix durable d’activation
+sont inclus dans les sauvegardes INFRA-01. Installer reconstruit le moteur et
+les unités, puis valide les accès avant de restaurer une activation enregistrée.
+Une ancienne sauvegarde sans ce choix laisse le moteur inactif. Voir le
+[guide Installer](https://github.com/cedric-HAOS/Ohana-Installer/blob/main/docs/AdGuard-Sync.md).
 
 Prévisualiser les nombres d'ajouts et de suppressions, sans mutation :
 
@@ -113,7 +100,7 @@ Une unité `oneshot` terminée correctement est `inactive (dead)` avec
 Activer ensuite la planification :
 
 ```bash
-sudo systemctl enable --now adguardhome-sync.timer
+sudo ohana capability activate adguard-sync
 systemctl list-timers adguardhome-sync.timer
 ```
 
