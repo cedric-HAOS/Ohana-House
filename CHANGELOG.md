@@ -2,6 +2,11 @@
 
 ## Non publié
 
+- Relevé en lecture seule du 25 octobre 2026 : versions et services
+  d'INFRA-01 datés, timer de réplication AdGuard actif, sauvegardes INFRA-01
+  quotidiennes réussies, Katsuyu et Shizune en service. L'exclusivité DHCP, la
+  panne d'INFRA-01 pendant la réplication et l'inventaire complet des adresses
+  restent à prouver. Voir [Etat-Actuel.md](Etat-Actuel.md).
 - Contrôle documentaire D01/D02 : restauration INFRA-01 avec Installer 1.15.6
   minimum, permissions rclone et conservation de l'identité de déchiffrement
   locale/cloud avec une copie indépendante.

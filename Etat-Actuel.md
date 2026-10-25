@@ -31,6 +31,34 @@ hébergent les DNS. ESP-03 conserve ses températures piscine et reste un secour
 en préparation. Les versions de dépôts disponibles ne prouvent pas leur
 installation sur ces machines.
 
+## Relevé en lecture seule du 25 octobre 2026
+
+Pris à 10:50-11:05 (heure de Paris) par ssh en lecture seule et par l'API de
+Vision. Il complète le relevé du 9 octobre sans le remplacer.
+
+| Élément | Relevé |
+|---|---|
+| INFRA-01 | démarré le 09/10 à 13:45, 7 % du disque utilisé, aucune unité systemd en échec |
+| Composition | Platform 1.0.145 : Agent 1.48.0 et Vision 1.38.1, actifs depuis le 10/10 à 15:40 ; Installer 1.16.0 |
+| Chrony | synchronisé, strate 2, écart de 0,4 ms |
+| DHCP | dnsmasq actif, 42 baux, Bubule renouvelé aujourd'hui ; exclusivité non prouvée |
+| DNS | `ha-01.ohana.lan` = 192.168.1.20 sur 192.168.1.10, .11 et .12 |
+| Réplication AdGuard | timer toutes les 5 minutes, 38 noms vérifiés, synchronisation .11 vers .12 réussie |
+| Sauvegarde INFRA-01 | `backup.infra` réussi chaque jour du 19 au 25/10 |
+| Katsuyu / Shizune | `katsuyu-bubule` réclame et termine ses jobs ; passerelle Shizune disponible |
+
+Constats du même jour, corrigés dans le dépôt Agent mais pas encore déployés :
+
+- l'Agent écrivait environ 14 000 lignes `httpx` par jour dans le journal
+  d'INFRA-01, ce qui tronquait chaque jour la collecte des journaux ;
+- au changement d'heure du 25/10 à 02:00, la sauvegarde planifiée de HA-01 a
+  échoué à ouvrir son investigation (horloge des jobs fausse dans l'heure
+  répétée) ;
+- l'incident critique `adguard_sync.status` ouvert le 24/10 à 22:37 venait d'une
+  pause temporaire de la protection AdGuard, répliquée avec 11 s d'écart. La
+  protection est encore suspendue jusqu'au 25/10 à 21:36 sur les deux AdGuard :
+  c'est un réglage de l'opérateur à confirmer.
+
 ## Inventaire historique du 29 juillet 2026
 
 Les adresses ci-dessous sont conservées comme historique ; ne pas les utiliser

@@ -19,11 +19,11 @@ limites sont dans [Etat-Actuel.md](Etat-Actuel.md) et le [CHANGELOG](CHANGELOG.m
 
 ## Contrôles à consigner après reprise
 
-- [ ] Dater les versions et l'état des services Agent/Vision/Chrony.
-- [ ] Vérifier un nouveau bail DHCP et l'exclusivité du serveur principal.
-- [ ] Confirmer le timer de réplication DNS et son comportement pendant une panne.
-- [ ] Vérifier permissions rclone, accès iCloud et nouvelle sauvegarde publiée.
-- [ ] Vérifier les autorisations Katsuyu/Shizune ou refaire les associations requises.
+- [x] Dater les versions et l'état des services Agent/Vision/Chrony. *(25/10/2026 : Platform 1.0.145, Agent 1.48.0 et Vision 1.38.1 actifs depuis le 10/10 à 15:40, Chrony synchronisé en strate 2, aucune unité en échec)*
+- [ ] Vérifier un nouveau bail DHCP et l'exclusivité du serveur principal. *(25/10/2026 : dnsmasq actif, 42 baux dont Bubule renouvelé ; l'absence d'un autre serveur DHCP reste à prouver)*
+- [ ] Confirmer le timer de réplication DNS et son comportement pendant une panne. *(25/10/2026 : timer actif toutes les 5 minutes, 38 noms vérifiés, `ha-01.ohana.lan` = .20 sur les trois DNS ; le comportement pendant une panne n'a pas été essayé)*
+- [x] Vérifier permissions rclone, accès iCloud et nouvelle sauvegarde publiée. *(25/10/2026 : `backup.infra` réussi chaque jour du 19 au 25/10 via Katsuyu)*
+- [x] Vérifier les autorisations Katsuyu/Shizune ou refaire les associations requises. *(25/10/2026 : `katsuyu-bubule` réclame et termine ses jobs, passerelle Shizune disponible)*
 - [ ] Actualiser l'inventaire des adresses effectives, dont les deux AdGuard.
 - [ ] Maintenir l'inventaire Shelly dans Agent et House.
 - [ ] Qualifier ESP-03 sur le matériel avant toute activation du secours.
