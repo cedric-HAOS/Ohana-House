@@ -1,5 +1,11 @@
 # Restaurer INFRA-01
 
+> Depuis Installer 1.17.0, `ohana restore` laisse un compte rendu (résultat, étape
+> atteinte, sauvegarde utilisée, sans secret) dans
+> `/var/lib/ohana-installer/restore-reports`. L'Agent le lit et l'enregistre comme
+> test de restauration d'INFRA-01 ; une restauration partielle ou échouée y est
+> signalée comme urgente, une restauration complète comme vérifiée.
+
 ## Préparer le système
 
 Suivre [Installer INFRA-01](../Installation/Installer-INFRA-01.md) sur une nouvelle
