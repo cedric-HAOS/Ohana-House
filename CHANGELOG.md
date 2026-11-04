@@ -2,6 +2,13 @@
 
 ## Non publié
 
+- Veille d'Ohana depuis HA-01 : paquet Home Assistant
+  `config/home-assistant/ohana-veille.yaml` et procédure
+  [Veille-Ohana.md](docs/home-assistant/Veille-Ohana.md). HA-01 interroge Vision
+  par adresse IP et relaie l'état de l'Agent ; INFRA-01, Vision ou l'Agent muets
+  (5 à 10 minutes) ou des alertes actives envoient une notification à l'iPhone,
+  indépendamment d'INFRA-01. Non installé sur HA-01 ; l'essai de panne reste à
+  faire.
 - Relevé en lecture seule du 25 octobre 2026 : versions et services
   d'INFRA-01 datés, timer de réplication AdGuard actif, sauvegardes INFRA-01
   quotidiennes réussies, Katsuyu et Shizune en service. L'exclusivité DHCP, la

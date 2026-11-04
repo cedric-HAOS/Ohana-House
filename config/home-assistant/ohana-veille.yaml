@@ -1,0 +1,112 @@
+# Veille d'Ohana depuis HA-01 : alerte sur l'iPhone, indépendante d'INFRA-01.
+#
+# HA-01 interroge Vision toutes les minutes. Si INFRA-01, Vision ou l'Agent ne
+# répondent plus, ou si l'Agent signale des alertes actives, l'application
+# Home Assistant de l'iPhone reçoit une notification. Rien ici ne dépend de
+# Shizune ni d'un service externe.
+#
+# Installation : voir docs/home-assistant/Veille-Ohana.md
+#   1. Copier ce fichier dans /config/packages/ohana-veille.yaml de HA-01
+#      (`homeassistant: packages: !include_dir_named packages` dans
+#      configuration.yaml).
+#   2. Remplacer notify.mobile_app_REMPLACER par le service de votre iPhone
+#      (Outils de développement > Actions, chercher « notify.mobile_app »).
+#   3. Vérifier la configuration, puis redémarrer Home Assistant.
+
+rest:
+  - resource: http://192.168.1.10:8000/api/runtime/vitals
+    scan_interval: 60
+    timeout: 10
+    binary_sensor:
+      # `unavailable` quand INFRA-01 ou Vision ne répondent pas du tout.
+      - name: "Ohana veille Vision"
+        unique_id: ohana_veille_vision
+        value_template: "{{ value_json.state == 'running' }}"
+      # L'Agent vu par Vision : actif tant qu'il livre ses observations.
+      - name: "Ohana veille Agent"
+        unique_id: ohana_veille_agent
+        value_template: "{{ value_json.agent.state == 'active' }}"
+
+automation:
+  - id: ohana_veille_alerte
+    alias: "Ohana veille : alerte"
+    description: >-
+      Prévient l'iPhone quand Vision ou l'Agent sont muets pendant 5 minutes,
+      ou quand l'Agent signale des alertes actives depuis 10 minutes.
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id:
+          - binary_sensor.ohana_veille_vision
+          - binary_sensor.ohana_veille_agent
+        to:
+          - "off"
+          - "unavailable"
+        for: "00:05:00"
+      - trigger: numeric_state
+        entity_id: sensor.ohana_platform_alertes_actives
+        above: 0
+        for: "00:10:00"
+      # L'Agent publie « offline » à son arrêt et ses capteurs expirent après
+      # 5 battements manqués : un capteur indisponible = Agent muet.
+      - trigger: state
+        entity_id: sensor.ohana_platform_alertes_actives
+        to: "unavailable"
+        for: "00:10:00"
+    actions:
+      - variables:
+          problems: >-
+            {% set found = [] %}
+            {% if not is_state('binary_sensor.ohana_veille_vision', 'on') %}
+              {% set found = found + ['Vision ou INFRA-01 ne répondent pas'] %}
+            {% elif not is_state('binary_sensor.ohana_veille_agent', 'on') %}
+              {% set found = found + ["L'Agent ne livre plus ses observations"] %}
+            {% endif %}
+            {% if is_state('sensor.ohana_platform_alertes_actives', 'unavailable') %}
+              {% set found = found + ["L'Agent ne publie plus son état"] %}
+            {% elif states('sensor.ohana_platform_alertes_actives') | int(0) > 0 %}
+              {% set found = found + [states('sensor.ohana_platform_alertes_actives') ~ ' alerte(s) active(s)'] %}
+            {% endif %}
+            {{ found | join(' ; ') }}
+      - condition: template
+        value_template: "{{ problems | length > 0 }}"
+      - action: notify.mobile_app_REMPLACER
+        data:
+          title: "Ohana"
+          message: "{{ problems }}."
+          data:
+            tag: ohana-veille
+            group: ohana
+            push:
+              interruption-level: time-sensitive
+
+  - id: ohana_veille_retablie
+    alias: "Ohana veille : rétablie"
+    description: Retire la notification quand tout est revenu à la normale.
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id:
+          - binary_sensor.ohana_veille_vision
+          - binary_sensor.ohana_veille_agent
+        to: "on"
+        for: "00:02:00"
+      - trigger: numeric_state
+        entity_id: sensor.ohana_platform_alertes_actives
+        below: 1
+        for: "00:02:00"
+    conditions:
+      - condition: state
+        entity_id:
+          - binary_sensor.ohana_veille_vision
+          - binary_sensor.ohana_veille_agent
+        state: "on"
+      - condition: numeric_state
+        entity_id: sensor.ohana_platform_alertes_actives
+        below: 1
+    actions:
+      - action: notify.mobile_app_REMPLACER
+        data:
+          message: clear_notification
+          data:
+            tag: ohana-veille
