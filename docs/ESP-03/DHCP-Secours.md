@@ -9,6 +9,12 @@ Le matériel et la bascule réelle sur le LAN ne sont pas encore validés.
 Aucun déploiement ni publication de release n'a été effectué.
 Voir `config/esp-03/README.md` pour l'installation et la recette.
 
+## Statut au 10 novembre 2026
+
+L'utilisateur déclare que le DHCP de secours a été essayé sur le matériel. La
+date de l'essai, le firmware installé et le relevé de la bascule ne sont pas
+consignés dans ce dépôt ; le statut du 9 octobre ci-dessus reste l'historique.
+
 ## Configuration à préserver
 
 Carte Waveshare ESP32-P4-Eth, variante esp32p4 avec engineering_sample: true,

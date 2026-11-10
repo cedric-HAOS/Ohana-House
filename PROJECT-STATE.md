@@ -16,7 +16,7 @@ Les corrections documentaires du 10 octobre sont encore non publiées.
 | Ohana-Agent / Vision | Versions locales dans leurs dépôts ; versions réellement installées à relever |
 | DHCP principal | Jalon historique coché ; nouveau bail et exclusivité après reconstruction à confirmer |
 | Adressage | HA-01 .20 confirmé par DNS le 09/10 ; inventaire des autres adresses à actualiser |
-| ESP-03 | Prototype local non publié ; aucune qualification matérielle ni activation déduite |
+| ESP-03 | Prototype local du 9 octobre ; DHCP de secours essayé sur le matériel selon la déclaration de l'utilisateur du 10 novembre 2026 (date de l'essai et relevé non consignés) |
 
 Les preuves et leurs limites sont centralisées dans [Etat-Actuel.md](Etat-Actuel.md)
 et le [CHANGELOG](CHANGELOG.md). Une correction documentaire ne confirme pas
