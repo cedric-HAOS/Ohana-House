@@ -20,8 +20,8 @@ s'empiler, et le retour à la normale pendant 2 minutes la retire.
 
 ## Installation (à faire par l'utilisateur sur HA-01)
 
-État : installé sur HA-01 selon la déclaration de l'utilisateur du
-10 novembre 2026. L'essai réel ci-dessous reste à consigner avec sa date.
+État : installé sur HA-01 et essai de panne réalisé, selon la déclaration de
+l'utilisateur du 10 novembre 2026.
 
 1. Vérifier que `configuration.yaml` charge les paquets :
    `homeassistant: packages: !include_dir_named packages`.
