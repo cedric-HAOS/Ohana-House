@@ -7,8 +7,11 @@
   [Veille-Ohana.md](docs/home-assistant/Veille-Ohana.md). HA-01 interroge Vision
   par adresse IP et relaie l'état de l'Agent ; INFRA-01, Vision ou l'Agent muets
   (5 à 10 minutes) ou des alertes actives envoient une notification à l'iPhone,
-  indépendamment d'INFRA-01. Non installé sur HA-01 ; l'essai de panne reste à
-  faire.
+  indépendamment d'INFRA-01. Installé sur HA-01 selon la déclaration de
+  l'utilisateur du 10 novembre 2026 ; l'essai de panne reste à consigner.
+- Déclarations de l'utilisateur du 10 novembre 2026 reportées dans la roadmap :
+  veille installée sur HA-01, première mise à jour du système d'INFRA-01 et DHCP
+  qualifié. Chacune attend son relevé daté.
 - Relevé en lecture seule du 25 octobre 2026 : versions et services
   d'INFRA-01 datés, timer de réplication AdGuard actif, sauvegardes INFRA-01
   quotidiennes réussies, Katsuyu et Shizune en service. L'exclusivité DHCP, la

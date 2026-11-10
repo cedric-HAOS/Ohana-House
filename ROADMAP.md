@@ -26,7 +26,9 @@ limites sont dans [Etat-Actuel.md](Etat-Actuel.md) et le [CHANGELOG](CHANGELOG.m
 - [x] Vérifier les autorisations Katsuyu/Shizune ou refaire les associations requises. *(25/10/2026 : `katsuyu-bubule` réclame et termine ses jobs, passerelle Shizune disponible)*
 - [ ] Actualiser l'inventaire des adresses effectives, dont les deux AdGuard.
 - [ ] Maintenir l'inventaire Shelly dans Agent et House.
-- [ ] Qualifier ESP-03 sur le matériel avant toute activation du secours.
+- [ ] Qualifier ESP-03 sur le matériel avant toute activation du secours. *(10/11/2026 : l'utilisateur déclare le DHCP qualifié ; préciser s'il s'agit du secours ESP-03 sur le matériel et consigner le relevé daté avant de cocher)*
+- [ ] Consigner l'essai réel de la [veille depuis HA-01](docs/home-assistant/Veille-Ohana.md). *(10/11/2026 : paquet installé sur HA-01 selon l'utilisateur ; arrêt de Vision puis de l'Agent à dater)*
+- [ ] Consigner la première mise à jour du système d'INFRA-01. *(10/11/2026 : réalisée selon l'utilisateur ; paquets, noyau et redémarrage éventuel à dater)*
 
 Utiliser [le guide de reconstruction](Guide-de-Reconstruction.md) et
 [Validation finale](Validation-Finale.md) ; conserver une preuve datée par contrôle.
